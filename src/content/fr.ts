@@ -1,4 +1,4 @@
-import type { HotelConfig } from "./types";
+import type { HotelConfig } from "@/config/types";
 
 /**
  * La Cave Simson Hôtel — Nkolbisson, Yaoundé VII, Cameroun.
@@ -6,7 +6,7 @@ import type { HotelConfig } from "./types";
  * public map listings (Maps.me, Mapcarta) and 18 public guest reviews on Africabz (2018–2023). Photos are illustrative placeholders (Unsplash licence):
  * replace the files in /public/images with the hotel's own photography.
  */
-export const site: HotelConfig = {
+export const fr: HotelConfig = {
   name: "La Cave Simson Hôtel",
   shortName: "La Cave Simson",
   monogram: "CS",
@@ -28,7 +28,7 @@ export const site: HotelConfig = {
     subtitle:
       "Un refuge chic et calme sur la route de Nkolbisson, d'où le regard embrasse presque tout le centre-ville de Yaoundé.",
     image: "/images/hero.jpg",
-    cta: "Réserver un séjour",
+    cta: "Nous contacter",
   },
   intro: {
     kicker: "L'hôtel",
@@ -214,14 +214,12 @@ export const site: HotelConfig = {
     ],
     note: "Coordonnées GPS : 3.8705, 11.4827. Temps de trajet indicatifs, selon la circulation.",
   },
-  booking: {
-    kicker: "Réservation",
-    title: "Préparez votre séjour.",
+  contactSection: {
+    kicker: "Contact",
+    title: "Parlons de votre séjour.",
     intro:
-      "Indiquez vos dates et vos préférences : notre réception vous répond rapidement pour confirmer la disponibilité et le tarif.",
-    channel: "whatsapp",
-    whatsapp: "237657390112",
-    email: "contact@lacavesimsonhotel.com",
+      "Une question sur nos chambres, un événement à organiser ? Notre réception vous répond 24h/24, par téléphone ou sur WhatsApp.",
+    image: "/images/suite-senior.jpg",
   },
   contact: {
     phones: [
@@ -229,6 +227,7 @@ export const site: HotelConfig = {
       { label: "Mobile", value: "+237 657 39 01 12", href: "tel:+237657390112" },
       { label: "Ligne 2", value: "+237 242 71 14 66", href: "tel:+237242711466" },
     ],
+    whatsapp: "237657390112",
     email: "contact@lacavesimsonhotel.com",
     hours: "Réception ouverte 24h/24, 7j/7",
     postal: "BP 15 139 Yaoundé",
@@ -284,8 +283,8 @@ export const site: HotelConfig = {
         a: "Sur la nouvelle route de Nkolbisson, près du carrefour MEEC, dans l'arrondissement de Yaoundé VII. Le Stade Omnisports est à environ 3 km et la route nationale N3 tout proche.",
       },
       {
-        q: "Comment réserver ?",
-        a: "Remplissez le formulaire de réservation : votre demande s'ouvre dans WhatsApp, prête à être envoyée. Vous pouvez aussi appeler la réception, joignable 24h/24 au +237 222 22 75 74.",
+        q: "Comment contacter l'hôtel ?",
+        a: "Appelez la réception, joignable 24h/24 au +237 222 22 75 74, ou écrivez-nous sur WhatsApp au +237 657 39 01 12. Nous vous renseignons sur les disponibilités et les tarifs.",
       },
       {
         q: "Quels sont les tarifs ?",

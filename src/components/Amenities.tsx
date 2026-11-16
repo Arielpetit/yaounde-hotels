@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { EASE, MaskLines, Reveal } from "./ui/motion";
 import { Icon } from "./ui/Icon";
 
 export function Amenities() {
+  const { site } = useSite();
   return (
     <section id="services" className="relative py-24 sm:py-32 lg:py-40">
       <div className="container-x">

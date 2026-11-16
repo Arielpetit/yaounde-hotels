@@ -2,7 +2,7 @@
 
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { Logo } from "./ui/Logo";
 import { EASE } from "./ui/motion";
 
@@ -30,6 +30,7 @@ export function useIntroReady() {
 
 /** Brief brand intro, shown once per browser session. */
 export function Preloader() {
+  const { site } = useSite();
   const [visible, setVisible] = useState(true);
   const [count, setCount] = useState(0);
 

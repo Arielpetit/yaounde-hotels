@@ -3,10 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { EASE, MaskLines, Reveal } from "./ui/motion";
 
 export function Testimonials() {
+  const { site, ui } = useSite();
   const t = site.testimonials;
   const [i, setI] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -49,8 +50,8 @@ export function Testimonials() {
             )}
             <div className="mt-10 flex items-center gap-3">
               {[
-                { d: -1, Icon: ArrowLeft, label: "Avis précédent" },
-                { d: 1, Icon: ArrowRight, label: "Avis suivant" },
+                { d: -1, Icon: ArrowLeft, label: ui.prevReview },
+                { d: 1, Icon: ArrowRight, label: ui.nextReview },
               ].map(({ d, Icon, label }) => (
                 <button
                   key={d}
@@ -100,7 +101,7 @@ export function Testimonials() {
                   type="button"
                   onClick={() => setI(k)}
                   className="group py-3"
-                  aria-label={`Afficher l'avis ${k + 1}`}
+                  aria-label={`${ui.showReview} ${k + 1}`}
                   aria-current={k === i}
                 >
                   <span className="relative block h-px w-10 overflow-hidden bg-line sm:w-14">

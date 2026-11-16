@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
 import { useRef } from "react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { CountUp, Reveal } from "./ui/motion";
 
 function Word({ children, progress, range }: { children: string; progress: MotionValue<number>; range: [number, number] }) {
@@ -16,6 +16,7 @@ function Word({ children, progress, range }: { children: string; progress: Motio
 }
 
 export function Intro() {
+  const { site } = useSite();
   const textRef = useRef<HTMLParagraphElement>(null);
   const { scrollYProgress } = useScroll({ target: textRef, offset: ["start 0.85", "end 0.45"] });
   const words = site.intro.statement.split(" ");

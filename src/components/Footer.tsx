@@ -3,11 +3,12 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { ArrowUp } from "lucide-react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { Logo } from "./ui/Logo";
 import { useLenis } from "./SmoothScroll";
 
 export function Footer() {
+  const { site, ui } = useSite();
   const ref = useRef<HTMLElement>(null);
   const lenis = useLenis();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start end", "end end"] });
@@ -23,9 +24,9 @@ export function Footer() {
             <p className="mt-6 max-w-sm font-display text-2xl font-light italic text-fg/80">{site.footer.line}</p>
           </div>
           <div>
-            <p className="kicker mb-5">Navigation</p>
+            <p className="kicker mb-5">{ui.navigation}</p>
             <ul className="space-y-2.5 text-fg/75">
-              {[...site.nav, { label: "Réservation", href: "#reservation" }].map((n) => (
+              {[...site.nav, { label: ui.contact, href: "#contact" }].map((n) => (
                 <li key={n.href}>
                   <a href={n.href} className="link-underline hover:text-fg">
                     {n.label}
@@ -35,7 +36,7 @@ export function Footer() {
             </ul>
           </div>
           <div>
-            <p className="kicker mb-5">Contact</p>
+            <p className="kicker mb-5">{ui.contact}</p>
             <ul className="space-y-2.5 text-fg/75">
               {site.contact.phones.map((p) => (
                 <li key={p.href}>
@@ -75,14 +76,14 @@ export function Footer() {
 
       <div className="container-x relative flex flex-col gap-4 border-t border-line py-6 text-xs text-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
-          © {year} {site.name}. Tous droits réservés. {site.footer.credit}
+          © {year} {site.name}. {ui.rights} {site.footer.credit}
         </p>
         <button
           type="button"
           onClick={() => (lenis ? lenis.scrollTo(0, { duration: 2 }) : window.scrollTo({ top: 0, behavior: "smooth" }))}
           className="inline-flex items-center gap-2 uppercase tracking-[0.2em] hover:text-fg"
         >
-          Haut de page <ArrowUp className="h-3.5 w-3.5" />
+          {ui.backToTop} <ArrowUp className="h-3.5 w-3.5" />
         </button>
       </div>
     </footer>

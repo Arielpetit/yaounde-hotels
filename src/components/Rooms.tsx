@@ -4,23 +4,23 @@ import Image from "next/image";
 import { AnimatePresence, motion, useScroll, useTransform } from "framer-motion";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { ArrowUpRight, X } from "lucide-react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import type { Room } from "@/config/types";
 import { EASE, MaskLines, Reveal } from "./ui/motion";
 import { Icon } from "./ui/Icon";
-import { useBooking } from "./BookingContext";
 import { useLenis, useScrollTo } from "./SmoothScroll";
 
 const useIsoLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
 
 function RoomCard({ room, index, onOpen }: { room: Room; index: number; onOpen: () => void }) {
+  const { site, ui } = useSite();
   return (
     <article className="group relative flex h-full w-full flex-col">
       <button
         type="button"
         onClick={onOpen}
         className="relative block aspect-[4/5] w-full overflow-hidden rounded-sm text-left sm:aspect-[5/4] lg:aspect-auto lg:h-[min(52vh,560px)]"
-        aria-label={`Voir le détail : ${room.name}`}
+        aria-label={`${ui.viewRoom} : ${room.name}`}
       >
         <Image
           src={room.image}
@@ -50,7 +50,7 @@ function RoomCard({ room, index, onOpen }: { room: Room; index: number; onOpen: 
 }
 
 function RoomModal({ room, onClose }: { room: Room; onClose: () => void }) {
-  const { update } = useBooking();
+  const { ui } = useSite();
   const scrollTo = useScrollTo();
   const lenis = useLenis();
   const closeRef = useRef<HTMLButtonElement>(null);
@@ -116,13 +116,12 @@ function RoomModal({ room, onClose }: { room: Room; onClose: () => void }) {
             <button
               type="button"
               onClick={() => {
-                update({ room: room.name });
                 onClose();
-                setTimeout(() => scrollTo("#reservation"), 300);
+                setTimeout(() => scrollTo("#contact"), 300);
               }}
               className="inline-flex h-12 items-center rounded-full bg-accent px-7 text-[0.78rem] font-semibold uppercase tracking-[0.16em] text-on-accent transition-transform hover:scale-[1.03]"
             >
-              Réserver cette chambre
+              {ui.contactAboutRoom}
             </button>
           </div>
         </div>
@@ -131,7 +130,7 @@ function RoomModal({ room, onClose }: { room: Room; onClose: () => void }) {
           type="button"
           onClick={onClose}
           className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-black/50 text-white backdrop-blur-md transition-colors hover:bg-black/80"
-          aria-label="Fermer"
+          aria-label={ui.close}
         >
           <X className="h-5 w-5" strokeWidth={1.4} />
         </button>
@@ -141,6 +140,7 @@ function RoomModal({ room, onClose }: { room: Room; onClose: () => void }) {
 }
 
 export function Rooms() {
+  const { site } = useSite();
   const [active, setActive] = useState<Room | null>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);

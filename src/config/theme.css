@@ -1,5 +1,7 @@
-/* La Cave Simson — "cellar" palette: near-black, burgundy wine, champagne gold. */
-:root {
+/* La Cave Simson — "cellar" palette: near-black, burgundy wine, champagne gold.
+   Dark is the brand default; light is a warm parchment variant. */
+:root,
+:root[data-theme="dark"] {
   --bg: #0d0a09;
   --bg-soft: #16110f;
   --surface: #1e1714;
@@ -9,9 +11,33 @@
   --accent-2: #7a2333;
   --on-accent: #140f0c;
   --line: rgba(241, 232, 218, 0.12);
+  --grain-opacity: 0.06;
+  --map-filter: grayscale(0.4) contrast(1.05);
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f7f1e8;
+  --bg-soft: #efe6d8;
+  --surface: #e6dac7;
+  --fg: #1d1512;
+  --muted: #6e6158;
+  --accent: #8a6428;
+  --accent-2: #7a2333;
+  --on-accent: #fffaf2;
+  --line: rgba(29, 21, 18, 0.13);
+  --grain-opacity: 0.03;
+  --map-filter: sepia(0.15);
+  color-scheme: light;
+}
+
+/* Photography stays dark in both themes. */
+:root {
   --hero-overlay: linear-gradient(180deg, rgba(13, 10, 9, 0.55) 0%, rgba(13, 10, 9, 0.15) 40%, rgba(13, 10, 9, 0.92) 100%);
   --hero-fg: #f1e8da;
   --hero-bg: #0d0a09;
-  --grain-opacity: 0.06;
-  color-scheme: dark;
+}
+.hero-scope {
+  --accent: #d6b47c;
+  --on-accent: #140f0c;
 }

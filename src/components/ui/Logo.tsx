@@ -1,8 +1,11 @@
-import { site } from "@/config/site";
+"use client";
+
+import { useSite } from "../SiteContext";
 import clsx from "clsx";
 
 /** Arched monogram (a nod to a vaulted cellar) + wordmark. */
 export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
+  const { site, ui } = useSite();
   return (
     <span className={clsx("inline-flex items-center gap-3", className)}>
       <svg viewBox="0 0 40 48" className="h-9 w-auto shrink-0" aria-hidden>
@@ -28,7 +31,7 @@ export function Logo({ className, compact = false }: { className?: string; compa
       {!compact && (
         <span className="flex flex-col whitespace-nowrap leading-none">
           <span className="font-display text-[1.35rem] tracking-wide">{site.shortName}</span>
-          <span className="mt-1 text-[0.58rem] uppercase tracking-[0.42em] text-muted">Hôtel · Yaoundé</span>
+          <span className="mt-1 text-[0.58rem] uppercase tracking-[0.42em] text-muted">{ui.logoSub}</span>
         </span>
       )}
     </span>
