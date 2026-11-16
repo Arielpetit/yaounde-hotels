@@ -1,17 +1,18 @@
-/* La Cave Simson — "cellar" palette: near-black, burgundy wine, champagne gold. */
+/* Mo'o Sa'a — "Yaoundé by night" palette: deep indigo, warm terracotta, sand. */
 :root {
-  --bg: #0d0a09;
-  --bg-soft: #16110f;
-  --surface: #1e1714;
-  --fg: #f1e8da;
-  --muted: #a89b8b;
-  --accent: #c9a56a;
-  --accent-2: #7a2333;
-  --on-accent: #140f0c;
-  --line: rgba(241, 232, 218, 0.12);
-  --hero-overlay: linear-gradient(180deg, rgba(13, 10, 9, 0.55) 0%, rgba(13, 10, 9, 0.15) 40%, rgba(13, 10, 9, 0.92) 100%);
-  --hero-fg: #f1e8da;
-  --hero-bg: #0d0a09;
-  --grain-opacity: 0.06;
+  --bg: #0e1424;
+  --bg-soft: #141c30;
+  --surface: #1b2540;
+  --fg: #f3ece2;
+  --muted: #9aa3b8;
+  --accent: #e07a4f;
+  --accent-2: #d9b38c;
+  --on-accent: #0e1424;
+  --line: rgba(243, 236, 226, 0.12);
+  --hero-overlay: linear-gradient(180deg, rgba(14, 20, 36, 0.55) 0%, rgba(14, 20, 36, 0.1) 40%, rgba(14, 20, 36, 0.92) 100%);
+  --hero-fg: #f3ece2;
+  --hero-bg: #0e1424;
+  --map-filter: grayscale(0.3) contrast(1.05);
+  --grain-opacity: 0.045;
   color-scheme: dark;
 }
