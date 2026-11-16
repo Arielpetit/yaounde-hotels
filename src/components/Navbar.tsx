@@ -62,7 +62,7 @@ export function Navbar() {
             <Logo />
           </a>
 
-          <ul className="hidden items-center gap-9 lg:flex">
+          <ul className="hidden items-center gap-7 xl:flex 2xl:gap-10">
             {site.nav.map((item) => (
               <li key={item.href}>
                 <a
@@ -71,7 +71,7 @@ export function Navbar() {
                     e.preventDefault();
                     go(item.href);
                   }}
-                  className="link-underline text-[0.8rem] uppercase tracking-[0.2em] text-fg/80 transition-colors hover:text-fg"
+                  className="link-underline whitespace-nowrap text-[0.78rem] uppercase tracking-[0.18em] text-fg/80 transition-colors hover:text-fg"
                 >
                   {item.label}
                 </a>
@@ -83,7 +83,7 @@ export function Navbar() {
             {phone && (
               <a
                 href={phone.href}
-                className="hidden items-center gap-2 text-sm text-fg/80 transition-colors hover:text-fg xl:flex"
+                className="hidden items-center gap-2 whitespace-nowrap text-sm text-fg/80 transition-colors hover:text-fg 2xl:flex"
               >
                 <Phone className="h-4 w-4 text-accent" strokeWidth={1.5} />
                 {phone.value}
@@ -106,7 +106,7 @@ export function Navbar() {
             <button
               type="button"
               onClick={() => setOpen((o) => !o)}
-              className="flex h-11 w-11 items-center justify-center rounded-full border border-line lg:hidden"
+              className="flex h-11 w-11 items-center justify-center rounded-full border border-line xl:hidden"
               aria-expanded={open}
               aria-controls="mobile-menu"
               aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
@@ -134,7 +134,7 @@ export function Navbar() {
         {open && (
           <motion.div
             id="mobile-menu"
-            className="fixed inset-0 z-40 flex flex-col bg-bg-soft pt-28 lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-bg-soft pt-28 xl:hidden"
             initial={{ clipPath: "circle(0% at calc(100% - 2.4rem) 2.25rem)" }}
             animate={{ clipPath: "circle(150% at calc(100% - 2.4rem) 2.25rem)" }}
             exit={{ clipPath: "circle(0% at calc(100% - 2.4rem) 2.25rem)" }}
