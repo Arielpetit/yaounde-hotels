@@ -1,17 +1,24 @@
-/* La Cave Simson — "cellar" palette: near-black, burgundy wine, champagne gold. */
+/* Massao Palace — "garden palace" palette: warm ivory, deep emerald, brushed brass. */
 :root {
-  --bg: #0d0a09;
-  --bg-soft: #16110f;
-  --surface: #1e1714;
-  --fg: #f1e8da;
-  --muted: #a89b8b;
-  --accent: #c9a56a;
-  --accent-2: #7a2333;
-  --on-accent: #140f0c;
-  --line: rgba(241, 232, 218, 0.12);
-  --hero-overlay: linear-gradient(180deg, rgba(13, 10, 9, 0.55) 0%, rgba(13, 10, 9, 0.15) 40%, rgba(13, 10, 9, 0.92) 100%);
-  --hero-fg: #f1e8da;
-  --hero-bg: #0d0a09;
-  --grain-opacity: 0.06;
-  color-scheme: dark;
+  --bg: #f6f1e7;
+  --bg-soft: #ece4d4;
+  --surface: #e3d8c3;
+  --fg: #13221b;
+  --muted: #5d6b62;
+  --accent: #9a7337;
+  --accent-2: #1f4d3a;
+  --on-accent: #fbf8f1;
+  --line: rgba(19, 34, 27, 0.14);
+  --hero-overlay: linear-gradient(180deg, rgba(10, 24, 18, 0.5) 0%, rgba(10, 24, 18, 0.1) 40%, rgba(10, 24, 18, 0.88) 100%);
+  --hero-fg: #fbf8f1;
+  --hero-bg: #0e1d16;
+  --map-filter: sepia(0.15) saturate(0.9);
+  --grain-opacity: 0.035;
+  color-scheme: light;
+}
+
+/* Brass on photography reads better slightly lighter. */
+.hero-scope {
+  --accent: #d6b07a;
+  --on-accent: #13221b;
 }
