@@ -238,8 +238,8 @@ export function Booking() {
               </div>
             </div>
 
-            <div className="mt-10 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="text-xs leading-relaxed text-muted sm:max-w-xs">
+            <div className="mt-10 flex flex-col gap-5 xl:flex-row xl:items-center xl:justify-between">
+              <p className="text-xs leading-relaxed text-muted xl:max-w-xs">
                 {booking.channel === "whatsapp"
                   ? "Votre demande s'ouvre dans WhatsApp, prête à être envoyée à la réception."
                   : "Votre demande s'ouvre dans votre messagerie, prête à être envoyée à la réception."}
