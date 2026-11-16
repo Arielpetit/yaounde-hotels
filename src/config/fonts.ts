@@ -1,16 +1,16 @@
-import { Bodoni_Moda, Jost } from "next/font/google";
+import { Cormorant_Garamond, Jost } from "next/font/google";
 
-export const displayFont = Bodoni_Moda({
+/** Cormorant for a gracious "palace" voice, Jost for clean, modern text. */
+export const displayFont = Cormorant_Garamond({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: ["500", "600"],
   variable: "--font-display-family",
   display: "swap",
 });
 
 export const bodyFont = Jost({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-body-family",
   display: "swap",
 });

@@ -9,37 +9,46 @@ export const en: HotelConfig = {
   description:
     "A 27-room hotel in Tsinga, Yaoundé: rooms with balconies and hill views, restaurant, bar, terrace, massage room, airport shuttle and free private parking.",
   locale: "en",
-  nav: [
-    { label: "The Palace", href: "#hotel" },
-    { label: "Rooms", href: "#chambres" },
-    { label: "Lifestyle", href: "#experiences" },
-    { label: "Services", href: "#services" },
-    { label: "Location", href: "#acces" },
-  ],
+  pages: {
+    hotel: { ...fr.pages.hotel, nav: "The hotel", kicker: "The Palace", title: "A palace on a human scale, in the heart of Tsinga.", intro: "Twenty-seven rooms with balconies, a terrace open morning and evening, and a team that welcomes you in French and English." },
+    chambres: { ...fr.pages.chambres, nav: "Rooms", kicker: "Rooms & suites", title: "Our rooms and suites", intro: "Every room has a balcony, a private bathroom, air conditioning and a flat-screen satellite TV." },
+    services: { ...fr.pages.services, nav: "Services", kicker: "Lifestyle", title: "Terrace, dining, wellness and business", intro: "A terrace for morning coffee, local cuisine, a massage room and a space for your meetings." },
+    galerie: { ...fr.pages.galerie, nav: "Gallery", kicker: "Gallery", title: "The Palace in pictures", intro: "Rooms, terrace, restaurant and massage room: a glimpse of Massao Palace." },
+    contact: { ...fr.pages.contact, nav: "Contact", kicker: "Contact", title: "Contact and directions", intro: "160 rue Nana Tchakounté, Tsinga. Our front desk answers 24/7 by phone or WhatsApp." },
+  },
   hero: {
     ...fr.hero,
     eyebrow: "Tsinga · Yaoundé · Cameroon",
     titleLines: ["A palace", "on a human scale,", "facing the hills."],
     subtitle:
       "Twenty-seven rooms with balconies, a terrace open morning and evening, and an attentive team, steps from Avenue Jean-Paul II.",
-    cta: "Contact us",
+    cta: "View the rooms",
   },
   intro: {
     ...fr.intro,
     kicker: "The Palace",
     statement:
-      "Here, luxury is measured in thoughtful touches: a terrace at sunrise, a room open to the hills of Yaoundé, a welcome that remembers you.",
+      "Here, luxury is measured in thoughtful touches.",
     body:
       "Tucked into the residential district of Tsinga, between the sub-prefecture and the leafy avenues of Bastos, Massao Palace combines the calm of a home with the services of a larger hotel: 24-hour front desk, restaurant, bar, massage room, airport shuttle and private parking. Our team welcomes you in French and English.",
     imageCaption: "Air-conditioned room with balcony",
     stats: [
-      { value: 27, label: "Air-conditioned rooms with balcony" },
-      { value: 24, suffix: "/7", label: "Front desk and room service" },
-      { value: 2, suffix: " min", label: "From Tsinga Grand Mosque" },
-      { value: 2, label: "Languages spoken: French and English" },
+      { value: "27", label: "Rooms with balcony" },
+      { value: "24/7", label: "Front desk and room service" },
+      { value: "2 min", label: "From Tsinga Grand Mosque" },
+      { value: "FR · EN", label: "Languages spoken" },
     ],
   },
-  marquee: ["Hill views", "Terrace", "Massage room", "Restaurant & bar", "Airport shuttle", "Free Wi-Fi", "Private parking"],
+  story: {
+    ...fr.story,
+    kicker: "Our house",
+    title: "The calm of a home, the services of a grand hotel.",
+    paragraphs: [
+      "Massao Palace stands at 160 rue Nana Tchakounté in the residential district of Tsinga, near Avenue Jean-Paul II, between the sub-prefecture and the leafy avenues of Bastos. Tsinga Grand Mosque is two minutes away and the city centre about 3 km.",
+      "Behind its white facade with arched windows, the hotel has twenty-seven air-conditioned rooms, all with a balcony and private bathroom; some look out over the hills.",
+      "24-hour front desk, restaurant, bar, terrace, massage room, shuttle to Nsimalen Airport and free private parking: our team welcomes you in French and English.",
+    ],
+  },
   roomsSection: {
     kicker: "Rooms & suites",
     title: "Your balcony over Yaoundé.",
@@ -95,7 +104,11 @@ export const en: HotelConfig = {
       ],
     },
   ],
-  experiencesSection: { kicker: "Lifestyle", title: "Take your time." },
+  experiencesSection: {
+    kicker: "Lifestyle",
+    title: "Take your time.",
+    intro: "Terrace, dining, wellness and business: everything is under one roof.",
+  },
   experiences: [
     {
       ...fr.experiences[0],
@@ -182,6 +195,7 @@ export const en: HotelConfig = {
     ],
     hours: "24-hour front desk · Check-out until 12 noon",
   },
+  cta: { ...fr.cta, title: "Your room with a balcony is waiting.", text: "Our front desk answers day and night, in French or English." },
   footer: { line: "Elegance in the heart of Tsinga.", credit: "Illustrative photography." },
   faq: {
     kicker: "Good to know",

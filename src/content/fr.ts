@@ -14,45 +14,76 @@ export const fr: HotelConfig = {
   description:
     "Hôtel de 27 chambres à Tsinga, Yaoundé : chambres avec balcon et vue sur les collines, restaurant, bar, terrasse, salle de massage, navette aéroport et parking privé gratuit.",
   locale: "fr",
-  nav: [
-    { label: "Le Palace", href: "#hotel" },
-    { label: "Chambres", href: "#chambres" },
-    { label: "Art de vivre", href: "#experiences" },
-    { label: "Services", href: "#services" },
-    { label: "Accès", href: "#acces" },
-  ],
+  pages: {
+    hotel: {
+      nav: "L'hôtel",
+      kicker: "Le Palace",
+      title: "Un palace à taille humaine, au cœur de Tsinga.",
+      intro: "Vingt-sept chambres avec balcon, une terrasse ouverte matin et soir et une équipe qui vous accueille en français comme en anglais.",
+      image: "/images/terrasse.jpg",
+    },
+    chambres: {
+      nav: "Chambres",
+      kicker: "Chambres & suites",
+      title: "Nos chambres et suites",
+      intro: "Toutes nos chambres ont un balcon, une salle de bain privative, la climatisation et une télévision satellite à écran plat.",
+      image: "/images/double-standard.jpg",
+    },
+    services: {
+      nav: "Services",
+      kicker: "Art de vivre",
+      title: "Terrasse, table, bien-être et affaires",
+      intro: "Une terrasse pour le café du matin, une cuisine locale, une salle de massage et un espace pour vos réunions.",
+      image: "/images/restaurant.jpg",
+    },
+    galerie: {
+      nav: "Galerie",
+      kicker: "Galerie",
+      title: "Le Palace en images",
+      intro: "Chambres, terrasse, restaurant et salle de massage : un aperçu de Massao Palace.",
+      image: "/images/mini-suite.jpg",
+    },
+    contact: {
+      nav: "Contact",
+      kicker: "Contact",
+      title: "Contact et accès",
+      intro: "160, rue Nana Tchakounté, à Tsinga. Notre réception vous répond 24h/24, par téléphone ou sur WhatsApp.",
+      image: "/images/dining.jpg",
+    },
+  },
   hero: {
     eyebrow: "Tsinga · Yaoundé · Cameroun",
     titleLines: ["Un palace", "à taille humaine,", "face aux collines."],
     subtitle:
       "Vingt-sept chambres avec balcon, une terrasse ouverte matin et soir et une équipe attentive, à deux pas de l'avenue Jean-Paul II.",
     image: "/images/hero.jpg",
-    cta: "Nous contacter",
+    cta: "Voir les chambres",
   },
   intro: {
     kicker: "Le Palace",
     statement:
-      "Ici, le luxe se mesure en attentions : une terrasse au lever du jour, une chambre ouverte sur les collines de Yaoundé, un accueil qui se souvient de vous.",
+      "Le luxe se mesure ici en attentions.",
     body:
       "Niché dans le quartier résidentiel de Tsinga, entre la sous-préfecture et les avenues arborées de Bastos, Massao Palace réunit le calme d'une maison et les services d'un grand hôtel : réception 24h/24, restaurant, bar, salle de massage, navette aéroport et parking privé. Nos équipes vous accueillent en français comme en anglais.",
     image: "/images/intro.jpg",
     imageCaption: "Chambre climatisée avec balcon",
     stats: [
-      { value: 27, label: "Chambres climatisées avec balcon" },
-      { value: 24, suffix: "h/24", label: "Réception et service en chambre" },
-      { value: 2, suffix: " min", label: "De la Grande Mosquée de Tsinga" },
-      { value: 2, label: "Langues d'accueil : français et anglais" },
+      { value: "27", label: "Chambres avec balcon" },
+      { value: "24h/24", label: "Réception et service en chambre" },
+      { value: "2 min", label: "De la Grande Mosquée de Tsinga" },
+      { value: "FR · EN", label: "Langues d'accueil" },
     ],
   },
-  marquee: [
-    "Vue sur les collines",
-    "Terrasse",
-    "Salle de massage",
-    "Restaurant & bar",
-    "Navette aéroport",
-    "Wi-Fi gratuit",
-    "Parking privé",
-  ],
+  story: {
+    kicker: "Notre maison",
+    title: "Le calme d'une maison, les services d'un grand hôtel.",
+    paragraphs: [
+      "Massao Palace se trouve au 160, rue Nana Tchakounté, dans le quartier résidentiel de Tsinga, près de l'avenue Jean-Paul II, entre la sous-préfecture et les avenues arborées de Bastos. La Grande Mosquée de Tsinga est à deux minutes et le centre-ville à environ 3 km.",
+      "Derrière sa façade blanche aux fenêtres en arc, l'hôtel compte vingt-sept chambres climatisées, toutes avec balcon et salle de bain privative ; certaines ont vue sur les collines.",
+      "Réception 24h/24, restaurant, bar, terrasse, salle de massage, navette pour l'aéroport de Nsimalen et parking privé gratuit : notre équipe vous accueille en français comme en anglais.",
+    ],
+    image: "/images/intro.jpg",
+  },
   roomsSection: {
     kicker: "Chambres & suites",
     title: "Votre balcon sur Yaoundé.",
@@ -119,6 +150,7 @@ export const fr: HotelConfig = {
   experiencesSection: {
     kicker: "Art de vivre",
     title: "Prendre le temps.",
+    intro: "La terrasse, la table, le bien-être et les affaires : tout se trouve sous le même toit.",
   },
   experiences: [
     {
@@ -214,6 +246,11 @@ export const fr: HotelConfig = {
     email: "sohisti@yahoo.fr",
     hours: "Réception ouverte 24h/24 · Départ jusqu'à 12h",
     socials: [{ label: "Facebook", href: "https://www.facebook.com/massaopalacehotel/" }],
+  },
+  cta: {
+    title: "Votre chambre avec balcon vous attend.",
+    text: "Notre réception vous répond jour et nuit, en français comme en anglais.",
+    image: "/images/terrasse.jpg",
   },
   footer: {
     line: "L'élégance au cœur de Tsinga.",

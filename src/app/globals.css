@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "../config/theme.css";
 
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
 @theme inline {
   --color-bg: var(--bg);
   --color-bg-soft: var(--bg-soft);
@@ -17,33 +19,24 @@
 }
 
 html {
-  scroll-behavior: auto;
   -webkit-text-size-adjust: 100%;
+  scroll-padding-top: 88px;
 }
-
 html.lenis,
 html.lenis body {
   height: auto;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
 }
 
 body {
   background: var(--bg);
   color: var(--fg);
   font-family: var(--font-body-family), system-ui, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: clip;
-}
-
-/* Text sitting on top of photography (hero, transparent navbar). */
-.hero-scope {
-  --fg: var(--hero-fg, #f6f1e8);
-  --bg: var(--hero-bg, #0b0b0b);
-  --line: rgba(255, 255, 255, 0.16);
-  --muted: rgba(246, 241, 232, 0.7);
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 ::selection {
@@ -51,93 +44,142 @@ body {
   color: var(--on-accent);
 }
 
-.font-display {
-  font-family: var(--font-display-family), Georgia, serif;
-  font-feature-settings: "liga" 1, "kern" 1;
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }
 
-.container-x {
-  width: 100%;
-  max-width: 1440px;
-  margin-inline: auto;
-  padding-inline: 1rem;
-}
-@media (min-width: 640px) {
+@layer components {
+  /* ---------- Type scale ---------- */
+  .font-display {
+    font-family: var(--font-display-family), Georgia, serif;
+    font-weight: var(--display-weight, 400);
+    letter-spacing: var(--display-tracking, -0.01em);
+  }
+  .t-hero {
+    font-size: clamp(2.5rem, 4.6vw, 4.25rem);
+    line-height: 1.06;
+  }
+  .t-page {
+    font-size: clamp(2.25rem, 4vw, 3.5rem);
+    line-height: 1.08;
+  }
+  .t-h2 {
+    font-size: clamp(1.875rem, 3vw, 2.625rem);
+    line-height: 1.15;
+  }
+  .t-h3 {
+    font-size: clamp(1.375rem, 1.8vw, 1.625rem);
+    line-height: 1.25;
+  }
+  .t-lead {
+    font-size: 1.125rem;
+    line-height: 1.7;
+  }
+  .label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  /* ---------- Layout ---------- */
   .container-x {
-    padding-inline: 2rem;
+    width: 100%;
+    max-width: 1240px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
   }
-}
-@media (min-width: 1024px) {
-  .container-x {
-    padding-inline: 3.5rem;
+  @media (min-width: 768px) {
+    .container-x {
+      padding-inline: 2.5rem;
+    }
   }
-}
+  .section {
+    padding-block: 5rem;
+  }
+  @media (min-width: 1024px) {
+    .section {
+      padding-block: 7.5rem;
+    }
+  }
 
-.kicker {
-  font-size: 0.72rem;
-  letter-spacing: 0.32em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-}
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    height: 3rem;
+    padding-inline: 1.6rem;
+    border-radius: var(--btn-radius, 999px);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover {
+    background: var(--accent-hover, var(--fg));
+    color: var(--accent-hover-fg, var(--bg));
+  }
+  .btn-outline {
+    border: 1px solid var(--line-strong, var(--line));
+    color: var(--fg);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .btn-light {
+    background: #fff;
+    color: #141414;
+  }
+  .btn-light:hover {
+    background: var(--accent);
+    color: var(--on-accent);
+  }
+  .btn-ghost-light {
+    border: 1px solid rgba(255, 255, 255, 0.55);
+    color: #fff;
+  }
+  .btn-ghost-light:hover {
+    background: rgba(255, 255, 255, 0.12);
+  }
 
-/* Film grain overlay */
-.grain::after {
-  content: "";
-  position: fixed;
-  inset: -50%;
-  z-index: 60;
-  pointer-events: none;
-  opacity: var(--grain-opacity, 0.05);
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-  animation: grain 8s steps(10) infinite;
-}
-@keyframes grain {
-  0%,
-  100% {
-    transform: translate(0, 0);
+  .link-arrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
   }
-  20% {
-    transform: translate(-5%, 4%);
+  .link-arrow svg {
+    transition: transform 0.3s ease;
   }
-  40% {
-    transform: translate(4%, -6%);
+  .link-arrow:hover svg {
+    transform: translateX(4px);
   }
-  60% {
-    transform: translate(-3%, 7%);
-  }
-  80% {
-    transform: translate(6%, -2%);
-  }
-}
 
-@keyframes marquee {
-  from {
-    transform: translate3d(0, 0, 0);
+  /* ---------- Media ---------- */
+  .img-zoom img {
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   }
-  to {
-    transform: translate3d(-50%, 0, 0);
+  .img-zoom:hover img {
+    transform: scale(1.04);
   }
-}
-.animate-marquee {
-  animation: marquee 40s linear infinite;
-}
-
-.link-underline {
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 0% 1px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-}
-.link-underline:hover {
-  background-size: 100% 1px;
-}
-
-input,
-select,
-textarea {
-  font: inherit;
+  .media {
+    border-radius: var(--media-radius, 4px);
+    overflow: hidden;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -145,7 +187,6 @@ textarea {
   *::before,
   *::after {
     animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 }
