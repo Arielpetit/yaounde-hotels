@@ -1,0 +1,15 @@
+/* La Cave Simson — "cellar" palette: near-black, burgundy wine, champagne gold. */
+:root {
+  --bg: #0d0a09;
+  --bg-soft: #16110f;
+  --surface: #1e1714;
+  --fg: #f1e8da;
+  --muted: #a89b8b;
+  --accent: #c9a56a;
+  --accent-2: #7a2333;
+  --on-accent: #140f0c;
+  --line: rgba(241, 232, 218, 0.12);
+  --hero-overlay: linear-gradient(180deg, rgba(13, 10, 9, 0.55) 0%, rgba(13, 10, 9, 0.15) 40%, rgba(13, 10, 9, 0.92) 100%);
+  --grain-opacity: 0.06;
+  color-scheme: dark;
+}

@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# La Cave Simson Hôtel — website
 
-## Getting Started
+Premium one-page website for **La Cave Simson Hôtel**, Nkolbisson, Yaoundé VII (Cameroon).
 
-First, run the development server:
+Built with Next.js 15 (App Router), Tailwind CSS v4, Framer Motion and Lenis smooth scrolling.
+
+## Branches
+
+This repository hosts three hotel sites that share one component system:
+
+| Branch | Hotel | Location |
+| --- | --- | --- |
+| `main` | La Cave Simson Hôtel | Route de Nkolbisson, carrefour MEEC, Yaoundé VII |
+| `massao-palace` | Massao Palace Hôtel | 160 rue Nana Tchakounté, Tsinga, Yaoundé |
+| `moosaa` | Hôtel Mo'o Sa'a | Nkolbisson, nouvelle route, Yaoundé |
+
+Each branch changes only the brand layer: `src/config/site.ts` (content), `src/config/theme.css` (colours),
+`src/config/fonts.ts` (typography), `src/components/ui/Logo.tsx` (mark) and `public/images`.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Brand preloader, mask-reveal headlines, parallax hero with Ken Burns zoom
+- Scroll-linked word reveal, count-up stats, infinite marquee
+- Pinned horizontal room gallery (desktop) with room detail dialog
+- Sticky image stack for experiences, amenity grid, masonry gallery with keyboard lightbox
+- Click-to-load Google Map, directions link
+- Reservation form that prepares an e-mail or WhatsApp message for the front desk (no backend needed)
+- Fully responsive, respects `prefers-reduced-motion`, keyboard accessible dialogs
 
-## Learn More
+## Content sources and things to confirm with the hotel
 
-To learn more about Next.js, take a look at the following resources:
+Facts come from the hotel's own website (lacavesimsonhotel.com, archived November 2023) and public map listings:
+address, phone numbers, e-mail, PO box, room categories, banquet and meeting rooms, security equipment.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Please confirm before going live:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography.
+- **Room prices** are shown as "Tarif sur demande". Add `price` to each room in `src/config/site.ts` if the hotel wants them public.
+- The e-mail address `contact@lacavesimsonhotel.com` dates from the 2015 website and the domain currently returns an error.
+- Bar and restaurant wording is intentionally general; adjust to the real menu and opening hours.
 
-## Deploy on Vercel
+## Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` to the public URL for correct social previews.
