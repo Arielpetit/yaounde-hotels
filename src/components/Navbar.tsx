@@ -42,6 +42,7 @@ export function Navbar() {
         className={clsx(
           "fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,backdrop-filter] duration-500",
           scrolled && !open ? "border-b border-line bg-bg/75 backdrop-blur-xl" : "border-b border-transparent",
+          !scrolled && !open && "hero-scope",
         )}
         animate={{ y: hidden ? "-100%" : "0%" }}
         transition={{ duration: 0.5, ease: EASE }}

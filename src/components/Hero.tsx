@@ -20,7 +20,7 @@ export function Hero() {
   const ready = useIntroReady();
 
   return (
-    <section id="top" ref={ref} className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
+    <section id="top" ref={ref} className="hero-scope relative isolate flex min-h-[100svh] flex-col overflow-hidden text-fg">
       <motion.div className="absolute inset-0 -z-10" style={{ y: imgY }}>
         <motion.div
           className="absolute inset-0"
