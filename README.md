@@ -1,6 +1,6 @@
-# La Cave Simson Hôtel — website
+# Massao Palace Hôtel — website
 
-Premium one-page website for **La Cave Simson Hôtel**, Nkolbisson, Yaoundé VII (Cameroon).
+Premium one-page website for **Massao Palace Hôtel**, 160 rue Nana Tchakounté, Tsinga, Yaoundé (Cameroon).
 
 Built with Next.js 15 (App Router), Tailwind CSS v4, Framer Motion and Lenis smooth scrolling.
 
@@ -38,15 +38,18 @@ Open http://localhost:3000.
 
 ## Content sources and things to confirm with the hotel
 
-Facts come from the hotel's own website (lacavesimsonhotel.com, archived November 2023) and public map listings:
-address, phone numbers, e-mail, PO box, room categories, banquet and meeting rooms, security equipment.
+Facts come from the hotel's website (massaopalacehotel.com, via search index), its Facebook page and booking listings
+(Trip.com, Ease Travel, Exploreo): address, 27 rooms, room types and prices (Double Standard 30 000 FCFA,
+Mini Suite 45 000 FCFA), balconies and mountain views, restaurant, bar, terrace, massage room, barbecue, airport shuttle,
+free parking and Wi-Fi, conference room, 24-hour reception, French and English spoken.
 
 Please confirm before going live:
 
 - **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography.
-- **Room prices** are shown as "Tarif sur demande". Add `price` to each room in `src/config/site.ts` if the hotel wants them public.
-- The e-mail address `contact@lacavesimsonhotel.com` dates from the 2015 website and the domain currently returns an error.
-- Bar and restaurant wording is intentionally general; adjust to the real menu and opening hours.
+- **WhatsApp number** for reservations (`booking.whatsapp` in `src/config/site.ts`) is set to +237 677 81 28 81, the number listed on Trip.com. Listings also show +237 699 28 35 29 and +237 692 37 54 80.
+- **E-mail** `sohisti@yahoo.fr` comes from the hotel's Facebook page.
+- The "Chambre Double" category and its price are not confirmed; booking sites list single- and double-bed options.
+- Breakfast and check-in times differ between listings and are left out on purpose.
 
 ## Deploy
 
