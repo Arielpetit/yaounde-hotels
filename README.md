@@ -6,7 +6,7 @@ Built with Next.js 15 (App Router), Tailwind CSS v4, Framer Motion and Lenis smo
 
 ## Branches
 
-This repository hosts three hotel sites that share one component system:
+This repository hosts three hotel sites that share one design system:
 
 | Branch | Hotel | Location |
 | --- | --- | --- |
@@ -14,9 +14,9 @@ This repository hosts three hotel sites that share one component system:
 | `massao-palace` | Massao Palace Hôtel | 160 rue Nana Tchakounté, Tsinga, Yaoundé |
 | `moosaa` | Hôtel Mo'o Sa'a | Nkolbisson, nouvelle route, Yaoundé |
 
-Each branch changes only the brand layer: `src/content/fr.ts` and `src/content/en.ts` (content in French and English),
-`src/config/theme.css` (light and dark palettes), `src/config/brand.ts` (default theme), `src/config/fonts.ts` (typography),
-`src/components/ui/Logo.tsx` (mark) and `public/images`.
+Each branch changes only the brand layer: `src/content/fr.ts` and `src/content/en.ts` (content),
+`src/config/theme.css` (light and dark palettes plus the brand's signature frame), `src/config/brand.ts` (default theme),
+`src/config/fonts.ts` (typography), `src/components/ui/Logo.tsx` and `src/components/ui/Ornament.tsx` (marks) and `public/images`.
 
 ## Getting started
 
@@ -27,17 +27,26 @@ npm run dev
 
 Open http://localhost:3000 (redirects to `/fr`). The English site is at `/en`.
 
-## Features
+## Pages
 
-- Presentation site in **French and English** (`/fr`, `/en`) with a language switch and `hreflang` alternates
-- **Light and dark mode** toggle, remembered per visitor, applied before first paint (no flash)
-- Brand preloader, mask-reveal headlines, parallax hero with Ken Burns zoom
-- Scroll-linked word reveal, count-up stats, infinite marquee
-- Pinned horizontal room gallery (desktop) with room detail dialog
-- Sticky image stack for experiences, amenity grid, masonry gallery with keyboard lightbox
-- Real guest testimonials, practical-info FAQ, click-to-load Google Map with directions
-- Contact section with WhatsApp, phone and e-mail; sticky call/WhatsApp bar on mobile
-- schema.org Hotel data for SEO; fully responsive; respects `prefers-reduced-motion`
+| Page | French | English |
+| --- | --- | --- |
+| Home | `/fr` | `/en` |
+| The hotel (story, amenities, reviews) | `/fr/hotel` | `/en/hotel` |
+| Rooms | `/fr/chambres` | `/en/chambres` |
+| Services (restaurant, bar, events…) | `/fr/services` | `/en/services` |
+| Gallery | `/fr/galerie` | `/en/galerie` |
+| Contact & directions, FAQ | `/fr/contact` | `/en/contact` |
+
+## Design
+
+- Palette taken from the hotel's real branding: the "CsH" logo is sage green and silver, the banquet hall green and ivory.
+- Marcellus (display, echoing the logo's classical capitals) with DM Sans for text; restrained type scale.
+- Signature: the oval of the CsH medallion frames one featured image per page.
+- Light mode by default, deep-moss dark mode; choice saved per visitor with no flash on load.
+- Quiet motion only: fade-in on scroll, slow photo zoom on headers and hover.
+- Fully responsive with a call/WhatsApp bar on phones; keyboard-accessible menus, gallery lightbox and FAQ.
+- schema.org Hotel data, per-page titles and `hreflang` alternates for SEO.
 
 ## Content sources and things to confirm with the hotel
 

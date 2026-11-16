@@ -8,37 +8,75 @@ export const en: HotelConfig = {
   description:
     "A chic, quiet hotel on the Nkolbisson road in Yaoundé: air-conditioned premium rooms, suites, a bar-restaurant serving local cuisine, a party hall for 300+ guests, a modular conference room, 24/7 secure parking and wheelchair access.",
   locale: "en",
-  nav: [
-    { label: "The hotel", href: "#hotel" },
-    { label: "Rooms", href: "#chambres" },
-    { label: "Experiences", href: "#experiences" },
-    { label: "Services", href: "#services" },
-    { label: "Reviews", href: "#avis" },
-    { label: "Location", href: "#acces" },
-  ],
+  pages: {
+    hotel: {
+      ...fr.pages.hotel,
+      nav: "The hotel",
+      kicker: "The hotel",
+      title: "Clean, chic and calm, above Yaoundé.",
+      intro: "Three buildings on the Nkolbisson road, a team on hand day and night, and security thought through to the last detail.",
+    },
+    chambres: {
+      ...fr.pages.chambres,
+      nav: "Rooms",
+      kicker: "Accommodation",
+      title: "Our rooms and suites",
+      intro: "Four categories, from the Standard Room to the Senior Suite with lounge, all with hot water and cable TV.",
+    },
+    services: {
+      ...fr.pages.services,
+      nav: "Services",
+      kicker: "Services",
+      title: "Restaurant, bar, parties and meetings",
+      intro: "Local cuisine served with care, a bar to end the day, a party hall for 300+ guests and a modular conference room.",
+    },
+    galerie: {
+      ...fr.pages.galerie,
+      nav: "Gallery",
+      kicker: "Gallery",
+      title: "The hotel in pictures",
+      intro: "Rooms, party hall, restaurant and bar: a glimpse of La Cave Simson.",
+    },
+    contact: {
+      ...fr.pages.contact,
+      nav: "Contact",
+      kicker: "Contact",
+      title: "Contact and directions",
+      intro: "Our front desk answers 24/7 by phone or WhatsApp. The hotel is on the new Nkolbisson road, near the MEEC junction.",
+    },
+  },
   hero: {
     ...fr.hero,
     eyebrow: "Yaoundé · Nkolbisson · Since 2015",
     titleLines: ["Above", "the city,", "at your service."],
     subtitle: "A chic and peaceful retreat on the Nkolbisson road, with views over almost all of downtown Yaoundé.",
-    cta: "Contact us",
+    cta: "View the rooms",
   },
   intro: {
     ...fr.intro,
     kicker: "The hotel",
     statement:
-      "Three buildings, one promise: a clean, chic, calm and inviting setting, run by a team trained to meet every one of your expectations.",
+      "Clean, chic and calm, with the city at your feet.",
     body:
       "Set in Yaoundé's 7th district, on the new Nkolbisson road close to the MEEC junction and the N3 national road, La Cave Simson overlooks the capital: from your window the whole city unfolds at a glance. The hotel is wheelchair accessible, and our uniformed team brings years of hospitality experience. They know what today's guests need and anticipate what tomorrow's will.",
     imageCaption: "Junior Suite — soft light and a proper workspace",
     stats: [
-      { value: 3, label: "Buildings, one with a lower level" },
-      { value: 24, suffix: "/7", label: "Front desk, security and assistance" },
-      { value: 300, suffix: "+", label: "Guests in the party hall" },
-      { value: 3, suffix: " km", label: "From the Omnisports Stadium" },
+      { value: "3", label: "Buildings, one with a lower level" },
+      { value: "24/7", label: "Front desk and security" },
+      { value: "300+", label: "Guests in the party hall" },
+      { value: "3 km", label: "From the Omnisports Stadium" },
     ],
   },
-  marquee: ["Premium rooms", "Suites", "Bar & Restaurant", "Party hall for 300+", "Meeting room", "Secure parking", "Views over Yaoundé"],
+  story: {
+    ...fr.story,
+    kicker: "Our house",
+    title: "Three buildings, one promise.",
+    paragraphs: [
+      "La Cave Simson Hotel stands in Yaoundé's 7th district, on the new Nkolbisson road, steps from the MEEC junction and the N3 national road. Its elevated position gives views over almost all of the city centre.",
+      "The property has three buildings: Building A with two lower levels, and Buildings B and C over three floors. It is wheelchair accessible and has a large car park guarded 24/7.",
+      "Our uniformed team brings years of hospitality experience. Their aim is simple: a clean, chic, calm and inviting setting, and service that meets every one of your expectations.",
+    ],
+  },
   roomsSection: {
     kicker: "Accommodation",
     title: "Rooms designed for rest.",
@@ -104,7 +142,11 @@ export const en: HotelConfig = {
       ],
     },
   ],
-  experiencesSection: { kicker: "Experiences", title: "Much more than a night." },
+  experiencesSection: {
+    kicker: "Services",
+    title: "Much more than a night.",
+    intro: "Restaurant, bar, party hall and meeting room: everything you need to stay, host or work.",
+  },
   experiences: [
     {
       ...fr.experiences[0],
@@ -198,6 +240,11 @@ export const en: HotelConfig = {
     ],
     hours: "Front desk open 24/7",
     postal: "PO Box 15 139 Yaoundé",
+  },
+  cta: {
+    ...fr.cta,
+    title: "A question, a stay, an event?",
+    text: "Our front desk answers day and night, by phone or on WhatsApp.",
   },
   footer: { line: "A clean, chic, calm and inviting setting.", credit: "Illustrative photography." },
   testimonials: {

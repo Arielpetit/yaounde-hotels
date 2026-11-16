@@ -1,45 +1,22 @@
-import { Preloader } from "@/components/Preloader";
-import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/Hero";
-import { Intro } from "@/components/Intro";
-import { Marquee } from "@/components/Marquee";
-import { Rooms } from "@/components/Rooms";
-import { Experiences } from "@/components/Experiences";
-import { Amenities } from "@/components/Amenities";
-import { Testimonials } from "@/components/Testimonials";
-import { Gallery } from "@/components/Gallery";
-import { Location } from "@/components/Location";
-import { Faq } from "@/components/Faq";
-import { Contact } from "@/components/Contact";
-import { Footer } from "@/components/Footer";
-import { MobileContactBar } from "@/components/MobileContactBar";
-import { StructuredData } from "@/components/StructuredData";
-import { getSite } from "@/content";
-import { isLocale } from "@/i18n/config";
+import { HomeHero } from "@/components/sections/HomeHero";
+import { IntroSplit } from "@/components/sections/IntroSplit";
+import { RoomsPreview } from "@/components/sections/Rooms";
+import { ExperiencesPreview } from "@/components/sections/Experiences";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { GalleryPreview } from "@/components/sections/Gallery";
+import { pageMetadata, type LocaleParams } from "./meta";
 
-export default async function Home({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = await params;
-  const site = getSite(isLocale(locale) ? locale : "fr");
+export const generateMetadata = ({ params }: { params: LocaleParams }) => pageMetadata(params);
+
+export default function HomePage() {
   return (
     <>
-      <Preloader />
-      <Navbar />
-      <main>
-        <Hero />
-        <Intro />
-        <Marquee />
-        <Rooms />
-        <Experiences />
-        <Amenities />
-        <Testimonials />
-        <Gallery />
-        <Location />
-        <Faq />
-        <Contact />
-      </main>
-      <Footer />
-      <MobileContactBar />
-      <StructuredData site={site} />
+      <HomeHero />
+      <IntroSplit />
+      <RoomsPreview />
+      <ExperiencesPreview />
+      <Testimonials />
+      <GalleryPreview />
     </>
   );
 }

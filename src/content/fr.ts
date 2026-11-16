@@ -14,46 +14,76 @@ export const fr: HotelConfig = {
   description:
     "Hôtel chic et calme sur la route de Nkolbisson, à Yaoundé : chambres climatisées haut standing, suites, bar-restaurant de cuisine locale, salle de fêtes de plus de 300 places, salle de conférence modulable, parking sécurisé 24h/24 et accès en fauteuil roulant.",
   locale: "fr",
-  nav: [
-    { label: "L'hôtel", href: "#hotel" },
-    { label: "Chambres", href: "#chambres" },
-    { label: "Expériences", href: "#experiences" },
-    { label: "Services", href: "#services" },
-    { label: "Avis", href: "#avis" },
-    { label: "Accès", href: "#acces" },
-  ],
+  pages: {
+    hotel: {
+      nav: "L'hôtel",
+      kicker: "L'hôtel",
+      title: "Un cadre propre, chic et calme, au-dessus de Yaoundé.",
+      intro: "Trois bâtiments sur la route de Nkolbisson, une équipe disponible jour et nuit et une sécurité pensée dans les moindres détails.",
+      image: "/images/hero.jpg",
+    },
+    chambres: {
+      nav: "Chambres",
+      kicker: "Hébergement",
+      title: "Nos chambres et suites",
+      intro: "Quatre catégories, de la chambre moyen standing à la Suite Senior avec salon, toutes avec eau chaude et télévision câblée.",
+      image: "/images/haut-standing.jpg",
+    },
+    services: {
+      nav: "Services",
+      kicker: "Services",
+      title: "Restaurant, bar, fêtes et réunions",
+      intro: "Une cuisine locale servie avec soin, un bar pour finir la journée, une salle de fêtes de plus de 300 places et une salle de conférence modulable.",
+      image: "/images/banquet.jpg",
+    },
+    galerie: {
+      nav: "Galerie",
+      kicker: "Galerie",
+      title: "L'hôtel en images",
+      intro: "Chambres, salle de fêtes, restaurant et bar : un aperçu de La Cave Simson.",
+      image: "/images/dining.jpg",
+    },
+    contact: {
+      nav: "Contact",
+      kicker: "Contact",
+      title: "Contact et accès",
+      intro: "Notre réception vous répond 24h/24, par téléphone ou sur WhatsApp. L'hôtel se trouve sur la nouvelle route de Nkolbisson, près du carrefour MEEC.",
+      image: "/images/events.jpg",
+    },
+  },
   hero: {
     eyebrow: "Yaoundé · Nkolbisson · Depuis 2015",
     titleLines: ["Au-dessus", "de la ville,", "à votre service."],
     subtitle:
       "Un refuge chic et calme sur la route de Nkolbisson, d'où le regard embrasse presque tout le centre-ville de Yaoundé.",
-    image: "/images/hero.jpg",
-    cta: "Nous contacter",
+    image: "/images/suite-senior.jpg",
+    cta: "Voir les chambres",
   },
   intro: {
     kicker: "L'hôtel",
     statement:
-      "Trois bâtiments, une seule promesse : un cadre propre, chic, calme et séduisant, porté par une équipe formée pour répondre à cent pour cent à vos attentes.",
+      "Un cadre propre, chic et calme, avec la ville à vos pieds.",
     body:
       "Installée dans l'arrondissement de Yaoundé VII, sur la nouvelle route de Nkolbisson, tout près du carrefour MEEC et de la route nationale N3, La Cave Simson domine la capitale : depuis votre fenêtre, la ville se déploie d'un seul regard. L'hôtel est accessible en fauteuil roulant et nos équipes, en uniforme, cumulent des années d'expérience hôtelière. Elles connaissent les besoins de nos hôtes d'aujourd'hui et anticipent ceux de demain.",
     image: "/images/suite-junior.jpg",
     imageCaption: "Suite Junior — lumière douce et espace de travail",
     stats: [
-      { value: 3, label: "Bâtiments, dont un avec sous-sol" },
-      { value: 24, suffix: "h/24", label: "Réception, sécurité et assistance" },
-      { value: 300, suffix: "+", label: "Invités dans la salle de fêtes" },
-      { value: 3, suffix: " km", label: "Du Stade Omnisports" },
+      { value: "3", label: "Bâtiments, dont un avec sous-sol" },
+      { value: "24h/24", label: "Réception et sécurité" },
+      { value: "300+", label: "Invités en salle de fêtes" },
+      { value: "3 km", label: "Du Stade Omnisports" },
     ],
   },
-  marquee: [
-    "Chambres haut standing",
-    "Suites",
-    "Bar & Restaurant",
-    "Salle de fêtes 300+ invités",
-    "Salle de réunion",
-    "Parking sécurisé",
-    "Vue sur Yaoundé",
-  ],
+  story: {
+    kicker: "Notre maison",
+    title: "Trois bâtiments, une seule promesse.",
+    paragraphs: [
+      "La Cave Simson Hôtel est installé dans l'arrondissement de Yaoundé VII, sur la nouvelle route de Nkolbisson, à deux pas du carrefour MEEC et de la route nationale N3. Sa position en hauteur offre, depuis les fenêtres, une vue sur la quasi-totalité du centre-ville.",
+      "L'établissement compte trois bâtiments : le bâtiment A avec deux niveaux en sous-sol, le bâtiment B et le bâtiment C sur trois niveaux. Il est accessible en fauteuil roulant et dispose d'un grand parking surveillé 24h/24.",
+      "Notre équipe, en uniforme, cumule des années d'expérience hôtelière. Son objectif est simple : un cadre propre, chic, calme et séduisant, et un service qui répond à cent pour cent à vos attentes.",
+    ],
+    image: "/images/moyen-standing.jpg",
+  },
   roomsSection: {
     kicker: "Hébergement",
     title: "Des chambres pensées pour le repos.",
@@ -128,8 +158,9 @@ export const fr: HotelConfig = {
     },
   ],
   experiencesSection: {
-    kicker: "Expériences",
+    kicker: "Services",
     title: "Bien plus qu'une nuit.",
+    intro: "Restaurant, bar, salle de fêtes et salle de réunion : tout ce qu'il faut pour séjourner, recevoir ou travailler.",
   },
   experiences: [
     {
@@ -232,6 +263,11 @@ export const fr: HotelConfig = {
     hours: "Réception ouverte 24h/24, 7j/7",
     postal: "BP 15 139 Yaoundé",
     socials: [],
+  },
+  cta: {
+    title: "Une question, un séjour, un événement ?",
+    text: "Notre réception vous répond jour et nuit, par téléphone ou sur WhatsApp.",
+    image: "/images/bar.jpg",
   },
   footer: {
     line: "Un cadre propre, chic, calme et séduisant.",

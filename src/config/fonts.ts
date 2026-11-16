@@ -1,16 +1,16 @@
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Marcellus, DM_Sans } from "next/font/google";
 
-export const displayFont = Cormorant_Garamond({
+/** Marcellus echoes the flared classical capitals of the CsH logo. */
+export const displayFont = Marcellus({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
-  style: ["normal", "italic"],
+  weight: "400",
   variable: "--font-display-family",
   display: "swap",
 });
 
-export const bodyFont = Manrope({
+export const bodyFont = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "500", "600"],
   variable: "--font-body-family",
   display: "swap",
 });

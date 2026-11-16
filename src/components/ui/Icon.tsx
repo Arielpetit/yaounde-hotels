@@ -72,5 +72,5 @@ const map: Record<IconName, React.ComponentType<LucideProps>> = {
 
 export function Icon({ name, ...props }: { name: IconName } & LucideProps) {
   const C = map[name];
-  return <C strokeWidth={1.4} aria-hidden {...props} />;
+  return <C strokeWidth={1.5} aria-hidden {...props} />;
 }
