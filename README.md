@@ -34,18 +34,23 @@ Open http://localhost:3000.
 - Sticky image stack for experiences, amenity grid, masonry gallery with keyboard lightbox
 - Click-to-load Google Map, directions link
 - Reservation form that prepares an e-mail or WhatsApp message for the front desk (no backend needed)
+- Real guest testimonials, practical-info FAQ, sticky mobile booking bar, schema.org Hotel data for SEO
 - Fully responsive, respects `prefers-reduced-motion`, keyboard accessible dialogs
 
 ## Content sources and things to confirm with the hotel
 
-Facts come from the hotel's own website (lacavesimsonhotel.com, archived November 2023) and public map listings:
-address, phone numbers, e-mail, PO box, room categories, banquet and meeting rooms, security equipment.
+Facts come from the hotel's own website (lacavesimsonhotel.com, archived November 2023), public map listings and
+18 public guest reviews on Africabz (2018–2023): address, phone numbers, e-mail, PO box, room categories, banquet hall
+(300+ guests), modular meeting room, local-cuisine restaurant and snack bar, wheelchair access, security equipment.
+The five testimonials on the page are real quotes from those reviews, with first name, date and source.
 
 Please confirm before going live:
 
 - **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography.
 - **Room prices** are shown as "Tarif sur demande". Add `price` to each room in `src/config/site.ts` if the hotel wants them public.
 - The e-mail address `contact@lacavesimsonhotel.com` dates from the 2015 website and the domain currently returns an error.
+- Reservations open WhatsApp to **+237 657 39 01 12** (number listed on Africabz). Confirm the hotel uses WhatsApp on it.
+- A 2022 review mentions a "VIP" night at 20 000 FCFA; prices are left as "sur demande" until confirmed.
 - Bar and restaurant wording is intentionally general; adjust to the real menu and opening hours.
 
 ## Deploy

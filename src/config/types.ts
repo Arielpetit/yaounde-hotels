@@ -28,7 +28,9 @@ export type IconName =
   | "home"
   | "map"
   | "users"
-  | "sparkles";
+  | "sparkles"
+  | "accessible"
+  | "music";
 
 export interface Room {
   id: string;
@@ -114,4 +116,25 @@ export interface HotelConfig {
     socials: { label: string; href: string }[];
   };
   footer: { line: string; credit: string };
+  /** Real guest reviews, quoted with attribution. */
+  testimonials?: {
+    kicker: string;
+    title: string;
+    intro?: string;
+    items: { quote: string; author: string; date: string; source: string }[];
+  };
+  /** Practical information shown as an accordion (FAQ). */
+  faq?: { kicker: string; title: string; items: { q: string; a: string }[] };
+  /** Data for schema.org Hotel structured data. */
+  seo: {
+    streetAddress: string;
+    locality: string;
+    region: string;
+    country: string;
+    telephone: string;
+    lat?: number;
+    lng?: number;
+    priceRange?: string;
+    amenities: string[];
+  };
 }

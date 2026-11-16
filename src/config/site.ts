@@ -2,8 +2,8 @@ import type { HotelConfig } from "./types";
 
 /**
  * La Cave Simson Hôtel — Nkolbisson, Yaoundé VII, Cameroun.
- * Facts sourced from the hotel's own website (lacavesimsonhotel.com, archived 2023)
- * and public map listings. Photos are illustrative placeholders (Unsplash licence):
+ * Facts sourced from the hotel's own website (lacavesimsonhotel.com, archived 2023),
+ * public map listings (Maps.me, Mapcarta) and 18 public guest reviews on Africabz (2018–2023). Photos are illustrative placeholders (Unsplash licence):
  * replace the files in /public/images with the hotel's own photography.
  */
 export const site: HotelConfig = {
@@ -12,13 +12,14 @@ export const site: HotelConfig = {
   monogram: "CS",
   tagline: "Toujours disponible à votre service",
   description:
-    "Hôtel chic et calme sur les hauteurs de Nkolbisson, à Yaoundé. Chambres haut standing, suites, bar-restaurant, salle de banquets et sécurité 24h/24, avec vue sur le centre-ville.",
+    "Hôtel chic et calme sur la route de Nkolbisson, à Yaoundé : chambres climatisées haut standing, suites, bar-restaurant de cuisine locale, salle de fêtes de plus de 300 places, salle de conférence modulable, parking sécurisé 24h/24 et accès en fauteuil roulant.",
   locale: "fr",
   nav: [
     { label: "L'hôtel", href: "#hotel" },
     { label: "Chambres", href: "#chambres" },
     { label: "Expériences", href: "#experiences" },
     { label: "Services", href: "#services" },
+    { label: "Avis", href: "#avis" },
     { label: "Accès", href: "#acces" },
   ],
   hero: {
@@ -34,13 +35,13 @@ export const site: HotelConfig = {
     statement:
       "Trois bâtiments, une seule promesse : un cadre propre, chic, calme et séduisant, porté par une équipe formée pour répondre à cent pour cent à vos attentes.",
     body:
-      "Installée dans l'arrondissement de Yaoundé VII, à cinquante mètres du carrefour MEEC, La Cave Simson domine la capitale. Depuis votre fenêtre, la ville se déploie d'un seul regard. Nos équipes cumulent des années d'expérience hôtelière : elles connaissent les besoins de nos hôtes d'aujourd'hui et anticipent ceux de demain.",
+      "Installée dans l'arrondissement de Yaoundé VII, sur la nouvelle route de Nkolbisson, tout près du carrefour MEEC et de la route nationale N3, La Cave Simson domine la capitale : depuis votre fenêtre, la ville se déploie d'un seul regard. L'hôtel est accessible en fauteuil roulant et nos équipes, en uniforme, cumulent des années d'expérience hôtelière. Elles connaissent les besoins de nos hôtes d'aujourd'hui et anticipent ceux de demain.",
     image: "/images/suite-junior.jpg",
     imageCaption: "Suite Junior — lumière douce et espace de travail",
     stats: [
       { value: 3, label: "Bâtiments, dont un avec sous-sol" },
       { value: 24, suffix: "h/24", label: "Réception, sécurité et assistance" },
-      { value: 50, suffix: " m", label: "Du carrefour MEEC" },
+      { value: 300, suffix: "+", label: "Invités dans la salle de fêtes" },
       { value: 3, suffix: " km", label: "Du Stade Omnisports" },
     ],
   },
@@ -48,7 +49,7 @@ export const site: HotelConfig = {
     "Chambres haut standing",
     "Suites",
     "Bar & Restaurant",
-    "Salle de banquets",
+    "Salle de fêtes 300+ invités",
     "Salle de réunion",
     "Parking sécurisé",
     "Vue sur Yaoundé",
@@ -136,9 +137,9 @@ export const site: HotelConfig = {
       kicker: "Gastronomie",
       title: "Le Restaurant",
       description:
-        "Du déjeuner de travail au dîner en tête-à-tête, notre salle accueille hôtes et visiteurs dans une atmosphère feutrée.",
+        "Cuisine camerounaise et plats du quotidien, servis par un personnel en uniforme : du déjeuner de travail au dîner en tête-à-tête, notre salle accueille hôtes et visiteurs dans une atmosphère conviviale.",
       image: "/images/restaurant.jpg",
-      points: ["Déjeuners d'affaires et dîners", "Cadre feutré, service attentionné", "Ouvert aux hôtes et aux visiteurs"],
+      points: ["Plats locaux bien préparés", "Snack-bar et mini-bar", "Ouvert aux hôtes et aux visiteurs"],
     },
     {
       id: "bar",
@@ -154,18 +155,18 @@ export const site: HotelConfig = {
       kicker: "Service banquets",
       title: "Salle de fêtes",
       description:
-        "Mariages, galas de Saint-Sylvestre, anniversaires : notre grande salle de fêtes transforme vos moments en souvenirs, avec le concours de nos partenaires.",
+        "Mariages, galas de Saint-Sylvestre, anniversaires : notre grande salle de fêtes accueille plus de 300 invités et transforme vos moments en souvenirs, avec le concours de nos partenaires.",
       image: "/images/banquet.jpg",
-      points: ["Mariages et réceptions", "Soirées de gala", "Parking spacieux et sécurisé"],
+      points: ["Plus de 300 invités", "Mariages, réceptions et galas", "Parking spacieux et sécurisé"],
     },
     {
       id: "reunions",
       kicker: "Affaires",
-      title: "Salle de réunion",
+      title: "Réunions & conférences",
       description:
-        "Conseils d'administration, séminaires et réunions d'équipe : un espace calme et équipé, à quelques minutes du centre-ville.",
+        "Conseils d'administration, séminaires et réunions d'équipe : une salle de réunion et de conférence modulable, au calme, à quelques minutes du centre-ville.",
       image: "/images/meeting.jpg",
-      points: ["Réunions et conseils d'administration", "Séminaires et formations", "Pauses et repas organisés sur place"],
+      points: ["Salle modulable", "Conseils d'administration et séminaires", "Restauration sur place"],
     },
   ],
   amenitiesSection: {
@@ -183,6 +184,10 @@ export const site: HotelConfig = {
     { icon: "wifi", title: "Wi-Fi", text: "Connexion dans l'établissement." },
     { icon: "tv", title: "TV câblée", text: "Plus de 150 chaînes en chambre." },
     { icon: "concierge", title: "Assistance 24h/24", text: "Une équipe joignable jour et nuit." },
+    { icon: "accessible", title: "Accès PMR", text: "Établissement accessible en fauteuil roulant." },
+    { icon: "shower", title: "Eau chaude", text: "Eau chaude et froide, baignoire dans certaines chambres." },
+    { icon: "utensils", title: "Restaurant & snack-bar", text: "Plats locaux et rafraîchissements." },
+    { icon: "party", title: "Salle de fêtes", text: "Plus de 300 invités, modulable." },
   ],
   gallery: [
     { src: "/images/hero.jpg", alt: "Chambre aux tons chauds", tall: true },
@@ -198,27 +203,30 @@ export const site: HotelConfig = {
   location: {
     kicker: "Accès",
     title: "Sur la route de Nkolbisson.",
-    address: ["Route de Nkolbisson", "À 50 m du carrefour MEEC", "Yaoundé VII, Cameroun"],
+    address: ["Nouvelle route de Nkolbisson", "Près du carrefour MEEC", "Yaoundé VII, Cameroun"],
     mapQuery: "3.870501,11.482723",
     landmarks: [
-      { label: "Carrefour MEEC", value: "50 m" },
+      { label: "Carrefour MEEC", value: "À deux pas" },
+      { label: "Route nationale N3", value: "À proximité" },
       { label: "Stade Omnisports de Yaoundé", value: "3 km" },
-      { label: "Centre-ville", value: "Vue panoramique" },
-      { label: "Arrondissement", value: "Yaoundé VII" },
+      { label: "Quartier Oyom-Abang", value: "Quelques minutes" },
+      { label: "Aéroport de Yaoundé-Nsimalen", value: "≈ 45 min en voiture" },
     ],
-    note: "Coordonnées GPS : 3.8705, 11.4827",
+    note: "Coordonnées GPS : 3.8705, 11.4827. Temps de trajet indicatifs, selon la circulation.",
   },
   booking: {
     kicker: "Réservation",
     title: "Préparez votre séjour.",
     intro:
       "Indiquez vos dates et vos préférences : notre réception vous répond rapidement pour confirmer la disponibilité et le tarif.",
-    channel: "email",
+    channel: "whatsapp",
+    whatsapp: "237657390112",
     email: "contact@lacavesimsonhotel.com",
   },
   contact: {
     phones: [
       { label: "Réception 24h/24", value: "+237 222 22 75 74", href: "tel:+237222227574" },
+      { label: "Mobile", value: "+237 657 39 01 12", href: "tel:+237657390112" },
       { label: "Ligne 2", value: "+237 242 71 14 66", href: "tel:+237242711466" },
     ],
     email: "contact@lacavesimsonhotel.com",
@@ -229,5 +237,87 @@ export const site: HotelConfig = {
   footer: {
     line: "Un cadre propre, chic, calme et séduisant.",
     credit: "Photographies d'illustration.",
+  },
+  testimonials: {
+    kicker: "Avis clients",
+    title: "Ils en parlent mieux que nous.",
+    intro: "Extraits d'avis publiés par nos hôtes sur Africabz.",
+    items: [
+      {
+        quote: "Hôtel de référence en terme d'accueil, de propreté, et surtout très bon rapport qualité prix.",
+        author: "Pierre",
+        date: "Mai 2019",
+        source: "Africabz",
+      },
+      {
+        quote: "Cadre propre et accueillant. Le service est de qualité et on s'intéresse au client véritablement.",
+        author: "Brice",
+        date: "Mai 2021",
+        source: "Africabz",
+      },
+      {
+        quote: "The location is strategic, big and comfortable rooms and their services are adorable.",
+        author: "Suh",
+        date: "Juillet 2022",
+        source: "Africabz",
+      },
+      {
+        quote: "Bel hôtel, jolie déco, lieu convivial, grand parking sécurisé, chambres climatisées haut standing.",
+        author: "Audrey",
+        date: "Mai 2021",
+        source: "Africabz",
+      },
+      {
+        quote: "Accessible même en fauteuil roulant, avec une bonne place de parking et une salle pour les cérémonies.",
+        author: "Emmanuel",
+        date: "Mars 2023",
+        source: "Africabz",
+      },
+    ],
+  },
+  faq: {
+    kicker: "Infos pratiques",
+    title: "Bon à savoir.",
+    items: [
+      {
+        q: "Où se trouve l'hôtel ?",
+        a: "Sur la nouvelle route de Nkolbisson, près du carrefour MEEC, dans l'arrondissement de Yaoundé VII. Le Stade Omnisports est à environ 3 km et la route nationale N3 tout proche.",
+      },
+      {
+        q: "Comment réserver ?",
+        a: "Remplissez le formulaire de réservation : votre demande s'ouvre dans WhatsApp, prête à être envoyée. Vous pouvez aussi appeler la réception, joignable 24h/24 au +237 222 22 75 74.",
+      },
+      {
+        q: "Quels sont les tarifs ?",
+        a: "Les tarifs dépendent de la catégorie de chambre et de la durée du séjour. Notre réception vous communique le prix exact et la disponibilité dès réception de votre demande.",
+      },
+      {
+        q: "Peut-on organiser un mariage ou une conférence ?",
+        a: "Oui. Notre salle de fêtes accueille plus de 300 invités et notre salle de réunion modulable reçoit conseils d'administration et séminaires. La restauration peut être assurée sur place.",
+      },
+      {
+        q: "L'hôtel est-il accessible aux personnes à mobilité réduite ?",
+        a: "Oui, l'établissement est accessible en fauteuil roulant. Signalez vos besoins lors de la réservation afin que nous préparions votre arrivée.",
+      },
+      {
+        q: "Y a-t-il un parking ?",
+        a: "Oui, un parking spacieux, surveillé et sécurisé 24h/24.",
+      },
+      {
+        q: "Quelles mesures de sécurité sont en place ?",
+        a: "Portique avec détecteurs de métaux, vidéosurveillance, alarmes et détecteurs incendie, extincteurs et accès aux chambres par porte magnétique.",
+      },
+    ],
+  },
+  seo: {
+    streetAddress: "Nouvelle route de Nkolbisson, près du carrefour MEEC, BP 15 139",
+    locality: "Yaoundé",
+    region: "Centre",
+    country: "CM",
+    telephone: "+237222227574",
+    lat: 3.870501,
+    lng: 11.482723,
+    priceRange: "FCFA",
+    amenities: ["Wi-Fi", "Parking sécurisé", "Restaurant", "Bar", "Salle de fêtes", "Salle de conférence", "Climatisation", "Accès fauteuil roulant", "Réception 24h/24"],
   },
 };

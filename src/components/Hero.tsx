@@ -31,6 +31,7 @@ export function Hero() {
           <Image src={site.hero.image} alt="" fill priority sizes="100vw" className="object-cover" />
         </motion.div>
         <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/10 to-transparent" />
       </motion.div>
 
       <motion.div
