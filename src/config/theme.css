@@ -1,5 +1,7 @@
-/* Mo'o Sa'a — "Yaoundé by night" palette: deep indigo, warm terracotta, sand. */
-:root {
+/* Mo'o Sa'a — "Yaoundé by night" palette: deep indigo, warm terracotta, sand.
+   Dark is the brand default; light is a warm sand variant. */
+:root,
+:root[data-theme="dark"] {
   --bg: #0e1424;
   --bg-soft: #141c30;
   --surface: #1b2540;
@@ -9,10 +11,33 @@
   --accent-2: #d9b38c;
   --on-accent: #0e1424;
   --line: rgba(243, 236, 226, 0.12);
-  --hero-overlay: linear-gradient(180deg, rgba(14, 20, 36, 0.55) 0%, rgba(14, 20, 36, 0.1) 40%, rgba(14, 20, 36, 0.92) 100%);
-  --hero-fg: #f3ece2;
-  --hero-bg: #0e1424;
   --map-filter: grayscale(0.3) contrast(1.05);
   --grain-opacity: 0.045;
   color-scheme: dark;
+}
+
+:root[data-theme="light"] {
+  --bg: #f8f3ec;
+  --bg-soft: #f0e7db;
+  --surface: #e7dbcb;
+  --fg: #141b2d;
+  --muted: #5f667a;
+  --accent: #b5532b;
+  --accent-2: #8a6a4a;
+  --on-accent: #fff8f1;
+  --line: rgba(20, 27, 45, 0.13);
+  --map-filter: sepia(0.1);
+  --grain-opacity: 0.03;
+  color-scheme: light;
+}
+
+/* Photography stays dark in both themes. */
+:root {
+  --hero-overlay: linear-gradient(180deg, rgba(14, 20, 36, 0.55) 0%, rgba(14, 20, 36, 0.1) 40%, rgba(14, 20, 36, 0.92) 100%);
+  --hero-fg: #f3ece2;
+  --hero-bg: #0e1424;
+}
+.hero-scope {
+  --accent: #e8875b;
+  --on-accent: #0e1424;
 }

@@ -2,10 +2,11 @@
 
 import { useState } from "react";
 import { MapPin, Navigation } from "lucide-react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { MaskLines, Reveal } from "./ui/motion";
 
 export function Location() {
+  const { site, ui } = useSite();
   const [mapActive, setMapActive] = useState(false);
   const q = encodeURIComponent(site.location.mapQuery);
   const embed = `https://maps.google.com/maps?q=${q}&z=15&output=embed`;
@@ -58,7 +59,7 @@ export function Location() {
               className="mt-10 inline-flex h-12 items-center gap-3 rounded-full border border-fg/25 px-7 text-[0.78rem] font-semibold uppercase tracking-[0.16em] transition-colors hover:border-accent hover:bg-accent hover:text-on-accent"
             >
               <Navigation className="h-4 w-4" strokeWidth={1.6} />
-              Itinéraire
+              {ui.directions}
             </a>
           </Reveal>
         </div>
@@ -67,7 +68,7 @@ export function Location() {
           <div className="relative h-[420px] overflow-hidden rounded-sm border border-line sm:h-[520px] lg:h-full lg:min-h-[600px]">
             {mapActive ? (
               <iframe
-                title={`Carte — ${site.name}`}
+                title={`${ui.map} — ${site.name}`}
                 src={embed}
                 className="absolute inset-0 h-full w-full"
                 style={{ filter: "var(--map-filter, grayscale(0.4) contrast(1.05))" }}
@@ -97,7 +98,7 @@ export function Location() {
                   </span>
                 </span>
                 <span className="relative text-[0.78rem] font-semibold uppercase tracking-[0.2em] transition-colors group-hover:text-accent">
-                  Afficher la carte interactive
+                  {ui.showMap}
                 </span>
               </button>
             )}

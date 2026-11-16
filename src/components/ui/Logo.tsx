@@ -1,8 +1,11 @@
-import { site } from "@/config/site";
+"use client";
+
+import { useSite } from "../SiteContext";
 import clsx from "clsx";
 
 /** Rising-sun roundel over a horizon line, plus wordmark. */
 export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
+  const { site, ui } = useSite();
   return (
     <span className={clsx("inline-flex items-center gap-3", className)}>
       <svg viewBox="0 0 44 44" className="h-10 w-10 shrink-0" aria-hidden>
@@ -17,7 +20,7 @@ export function Logo({ className, compact = false }: { className?: string; compa
       {!compact && (
         <span className="flex flex-col whitespace-nowrap leading-none">
           <span className="font-display text-[1.4rem] italic tracking-tight">{site.shortName}</span>
-          <span className="mt-1 text-[0.56rem] uppercase tracking-[0.45em] text-muted">Hôtel · Yaoundé</span>
+          <span className="mt-1 text-[0.56rem] uppercase tracking-[0.45em] text-muted">{ui.logoSub}</span>
         </span>
       )}
     </span>

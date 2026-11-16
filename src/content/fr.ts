@@ -1,4 +1,4 @@
-import type { HotelConfig } from "./types";
+import type { HotelConfig } from "@/config/types";
 
 /**
  * Hôtel Mo'o Sa'a — Nouvelle route de Nkolbisson, Yaoundé, Cameroun.
@@ -6,7 +6,7 @@ import type { HotelConfig } from "./types";
  * its Facebook page, Ayila'a and PNBooking listings. Photos are illustrative placeholders
  * (Unsplash licence): replace the files in /public/images with the hotel's own photography.
  */
-export const site: HotelConfig = {
+export const fr: HotelConfig = {
   name: "Hôtel Mo'o Sa'a",
   shortName: "Mo'o Sa'a",
   monogram: "MS",
@@ -27,7 +27,7 @@ export const site: HotelConfig = {
     subtitle:
       "Un cadre reposant et moderne sur la nouvelle route de Nkolbisson : chambres spacieuses, appartements meublés, restaurant et salle de fêtes réunis en un seul lieu.",
     image: "/images/hero.jpg",
-    cta: "Réserver maintenant",
+    cta: "Nous contacter",
   },
   intro: {
     kicker: "L'hôtel",
@@ -212,22 +212,21 @@ export const site: HotelConfig = {
     ],
     note: "Temps de trajet indicatifs, selon la circulation. Accueil à l'aéroport sur demande.",
   },
-  booking: {
-    kicker: "Réservation",
+  contactSection: {
+    kicker: "Contact",
     title: "Votre séjour commence ici.",
     intro:
-      "Choisissez vos dates et votre chambre : votre demande s'ouvre dans WhatsApp, prête à être envoyée à notre réception qui vous confirme disponibilité et tarif.",
-    channel: "whatsapp",
-    whatsapp: "237696877045",
-    email: "hotelmoosaapalace@gmail.com",
+      "Une chambre, un appartement meublé, une fête à organiser ou un accueil à l'aéroport ? Appelez-nous ou écrivez-nous sur WhatsApp, nous vous répondons rapidement.",
+    image: "/images/mini-suite.jpg",
   },
   contact: {
     phones: [
       { label: "Réception", value: "+237 696 87 70 45", href: "tel:+237696877045" },
       { label: "Fixe", value: "+237 222 23 41 47", href: "tel:+237222234147" },
     ],
+    whatsapp: "237696877045",
     email: "hotelmoosaapalace@gmail.com",
-    hours: "Réservations par téléphone, WhatsApp ou e-mail",
+    hours: "Renseignements par téléphone, WhatsApp ou e-mail",
     socials: [{ label: "Facebook", href: "https://www.facebook.com/hotelmoosaapalace/" }],
   },
   footer: {
@@ -243,12 +242,12 @@ export const site: HotelConfig = {
         a: "Sur la nouvelle route de Nkolbisson, en face du collège Excellence et à quelques mètres du carrefour MEEC, à Yaoundé.",
       },
       {
-        q: "Comment réserver ?",
-        a: "Remplissez le formulaire de réservation : votre demande s'ouvre dans WhatsApp, prête à être envoyée. Vous pouvez aussi nous appeler au +237 696 87 70 45 ou écrire à hotelmoosaapalace@gmail.com.",
+        q: "Comment contacter l'hôtel ?",
+        a: "Appelez-nous ou écrivez-nous sur WhatsApp au +237 696 87 70 45, ou envoyez un e-mail à hotelmoosaapalace@gmail.com. Nous vous renseignons sur les disponibilités et les tarifs.",
       },
       {
         q: "Venez-vous me chercher à l'aéroport ?",
-        a: "Oui. Notre service de dépôt et réception vous accueille à l'aéroport et prend en charge vos bagages. Indiquez votre vol au moment de la réservation.",
+        a: "Oui. Notre service de dépôt et réception vous accueille à l'aéroport et prend en charge vos bagages. Communiquez-nous votre numéro de vol à l'avance.",
       },
       {
         q: "Proposez-vous des séjours longue durée ?",

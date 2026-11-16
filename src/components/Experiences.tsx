@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { EASE, MaskLines, Reveal } from "./ui/motion";
 
 export function Experiences() {
+  const { site } = useSite();
   const [active, setActive] = useState(0);
   const items = site.experiences;
 
