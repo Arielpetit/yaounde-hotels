@@ -9,9 +9,9 @@ import { CountUp, Reveal } from "./ui/motion";
 function Word({ children, progress, range }: { children: string; progress: MotionValue<number>; range: [number, number] }) {
   const opacity = useTransform(progress, range, [0.14, 1]);
   return (
-    <span className="relative mr-[0.25em] inline-block">
-      <motion.span style={{ opacity }}>{children}</motion.span>
-    </span>
+    <>
+      <motion.span style={{ opacity }}>{children}</motion.span>{" "}
+    </>
   );
 }
 
