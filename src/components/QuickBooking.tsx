@@ -1,7 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
-import { useBooking } from "./BookingContext";
+import { addDays, useBooking } from "./BookingContext";
 import { useScrollTo } from "./SmoothScroll";
 
 const field =
@@ -19,7 +19,7 @@ export function QuickBooking() {
         e.preventDefault();
         scrollTo("#reservation");
       }}
-      className="hidden grid-cols-[1.3fr_1fr_1fr_auto] items-stretch overflow-hidden rounded-2xl border border-fg/15 bg-bg/40 backdrop-blur-xl md:grid"
+      className="hidden grid-cols-[1fr_1fr_0.8fr_auto] items-stretch overflow-hidden rounded-2xl border border-fg/15 bg-bg/40 backdrop-blur-xl md:grid"
       aria-label="Recherche rapide de disponibilité"
     >
       <label className="flex flex-col gap-1 border-r border-fg/10 px-6 py-4">
@@ -33,14 +33,14 @@ export function QuickBooking() {
         />
       </label>
       <label className="flex flex-col gap-1 border-r border-fg/10 px-6 py-4">
-        <span className="text-[0.65rem] uppercase tracking-[0.25em] text-fg/60">Nuits</span>
-        <select value={draft.nights} onChange={(e) => update({ nights: Number(e.target.value) })} className={field}>
-          {Array.from({ length: 30 }, (_, i) => i + 1).map((n) => (
-            <option key={n} value={n} className="bg-bg text-fg">
-              {n} {n > 1 ? "nuits" : "nuit"}
-            </option>
-          ))}
-        </select>
+        <span className="text-[0.65rem] uppercase tracking-[0.25em] text-fg/60">Départ</span>
+        <input
+          type="date"
+          min={draft.arrival ? addDays(draft.arrival, 1) : today}
+          value={draft.departure}
+          onChange={(e) => update({ departure: e.target.value })}
+          className={field}
+        />
       </label>
       <label className="flex flex-col gap-1 border-r border-fg/10 px-6 py-4">
         <span className="text-[0.65rem] uppercase tracking-[0.25em] text-fg/60">Adultes</span>

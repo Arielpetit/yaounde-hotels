@@ -10,6 +10,10 @@ import { Gallery } from "@/components/Gallery";
 import { Location } from "@/components/Location";
 import { Booking } from "@/components/Booking";
 import { Footer } from "@/components/Footer";
+import { Testimonials } from "@/components/Testimonials";
+import { Faq } from "@/components/Faq";
+import { MobileBookBar } from "@/components/MobileBookBar";
+import { StructuredData } from "@/components/StructuredData";
 
 export default function Home() {
   return (
@@ -23,11 +27,15 @@ export default function Home() {
         <Rooms />
         <Experiences />
         <Amenities />
+        <Testimonials />
         <Gallery />
         <Location />
+        <Faq />
         <Booking />
       </main>
       <Footer />
+      <MobileBookBar />
+      <StructuredData />
     </>
   );
 }

@@ -34,6 +34,7 @@ Open http://localhost:3000.
 - Sticky image stack for experiences, amenity grid, masonry gallery with keyboard lightbox
 - Click-to-load Google Map, directions link
 - Reservation form that prepares an e-mail or WhatsApp message for the front desk (no backend needed)
+- Practical-info FAQ, sticky mobile booking bar, schema.org Hotel data for SEO
 - Fully responsive, respects `prefers-reduced-motion`, keyboard accessible dialogs
 
 ## Content sources and things to confirm with the hotel
@@ -50,6 +51,7 @@ Please confirm before going live:
 - **E-mail** `sohisti@yahoo.fr` comes from the hotel's Facebook page.
 - The "Chambre Double" category and its price are not confirmed; booking sites list single- and double-bed options.
 - Breakfast and check-in times differ between listings and are left out on purpose.
+- No verifiable guest reviews were found online, so the testimonials section is disabled (add `testimonials` in `src/config/site.ts` to enable it).
 
 ## Deploy
 

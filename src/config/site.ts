@@ -219,4 +219,47 @@ export const site: HotelConfig = {
     line: "L'élégance au cœur de Tsinga.",
     credit: "Photographies d'illustration.",
   },
+  faq: {
+    kicker: "Infos pratiques",
+    title: "Bon à savoir.",
+    items: [
+      {
+        q: "Où se trouve Massao Palace ?",
+        a: "Au 160, rue Nana Tchakounté, dans le quartier de Tsinga, près de l'avenue Jean-Paul II et à deux minutes de la Grande Mosquée de Tsinga. Le centre-ville est à environ 3 km.",
+      },
+      {
+        q: "Quels sont les tarifs ?",
+        a: "La Chambre Double Standard est à 30 000 FCFA la nuit et la Mini Suite (jusqu'à 3 personnes, 20 m²) à 45 000 FCFA. Contactez la réception pour les autres catégories et les séjours longs.",
+      },
+      {
+        q: "À quelle heure dois-je libérer la chambre ?",
+        a: "Le départ se fait jusqu'à 12h. La réception est ouverte 24h/24 : prévenez-nous de votre heure d'arrivée pour que tout soit prêt.",
+      },
+      {
+        q: "Proposez-vous un transfert depuis l'aéroport ?",
+        a: "Oui, une navette relie l'hôtel à l'aéroport de Yaoundé-Nsimalen. Indiquez votre numéro de vol au moment de la réservation.",
+      },
+      {
+        q: "Le parking et le Wi-Fi sont-ils inclus ?",
+        a: "Oui. Le parking privé et le Wi-Fi sont gratuits pour les clients de l'hôtel.",
+      },
+      {
+        q: "Les enfants et les animaux sont-ils acceptés ?",
+        a: "Les enfants de tout âge sont les bienvenus ; la Mini Suite accueille jusqu'à trois personnes. Les animaux de compagnie ne sont pas admis. Le titulaire de la réservation doit avoir au moins 18 ans.",
+      },
+      {
+        q: "Quelles langues parle votre équipe ?",
+        a: "Notre équipe vous accueille en français et en anglais.",
+      },
+    ],
+  },
+  seo: {
+    streetAddress: "160, rue Nana Tchakounté, Tsinga",
+    locality: "Yaoundé",
+    region: "Centre",
+    country: "CM",
+    telephone: "+237677812881",
+    priceRange: "30 000 – 45 000 FCFA",
+    amenities: ["Wi-Fi gratuit", "Parking privé gratuit", "Navette aéroport", "Restaurant", "Bar", "Terrasse", "Massage", "Salle de conférence", "Climatisation", "Réception 24h/24", "Service en chambre"],
+  },
 };

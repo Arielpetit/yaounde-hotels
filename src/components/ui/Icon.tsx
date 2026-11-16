@@ -29,6 +29,8 @@ import {
   MapPin,
   Users,
   Sparkles,
+  Accessibility,
+  Music,
   type LucideProps,
 } from "lucide-react";
 import type { IconName } from "@/config/types";
@@ -64,6 +66,8 @@ const map: Record<IconName, React.ComponentType<LucideProps>> = {
   map: MapPin,
   users: Users,
   sparkles: Sparkles,
+  accessible: Accessibility,
+  music: Music,
 };
 
 export function Icon({ name, ...props }: { name: IconName } & LucideProps) {

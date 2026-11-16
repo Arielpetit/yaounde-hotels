@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ArrowRight, Check, Mail, MessageCircle, Phone } from "lucide-react";
 import { site } from "@/config/site";
 import { MaskLines, Reveal } from "./ui/motion";
-import { useBooking } from "./BookingContext";
+import { addDays, nightsBetween, useBooking } from "./BookingContext";
 
 const input =
   "peer w-full border-b border-line bg-transparent pb-3 pt-6 text-base text-fg outline-none transition-colors focus:border-accent [color-scheme:inherit]";
@@ -20,6 +20,7 @@ export function Booking() {
   const [sent, setSent] = useState(false);
   const today = new Date().toISOString().slice(0, 10);
   const { booking, contact } = site;
+  const nights = nightsBetween(draft.arrival, draft.departure);
 
   const buildMessage = () =>
     [
@@ -28,7 +29,7 @@ export function Booking() {
       "Je souhaite effectuer une demande de réservation :",
       `• Chambre : ${draft.room || "Pas de préférence"}`,
       `• Arrivée : ${draft.arrival || "À préciser"}`,
-      `• Nuits : ${draft.nights}`,
+      `• Départ : ${draft.departure || "À préciser"}${nights ? ` (${nights} ${nights > 1 ? "nuits" : "nuit"})` : ""}`,
       `• Adultes : ${draft.adults} — Enfants : ${draft.children}`,
       `• Nom : ${name}`,
       `• Téléphone : ${phone}`,
@@ -146,20 +147,17 @@ export function Booking() {
                 </label>
               </div>
               <div className="relative">
-                <select
-                  id="nights"
-                  value={draft.nights}
-                  onChange={(e) => update({ nights: Number(e.target.value) })}
+                <input
+                  id="departure"
+                  type="date"
+                  required
+                  min={draft.arrival ? addDays(draft.arrival, 1) : today}
+                  value={draft.departure}
+                  onChange={(e) => update({ departure: e.target.value })}
                   className={input}
-                >
-                  {Array.from({ length: 31 }, (_, i) => i + 1).map((n) => (
-                    <option key={n} value={n} className="bg-bg">
-                      {n} {n > 1 ? "nuits" : "nuit"}
-                    </option>
-                  ))}
-                </select>
-                <label htmlFor="nights" className={label}>
-                  Nombre de nuits
+                />
+                <label htmlFor="departure" className={label}>
+                  Date de départ *{nights ? ` · ${nights} ${nights > 1 ? "nuits" : "nuit"}` : ""}
                 </label>
               </div>
               <div className="relative">
