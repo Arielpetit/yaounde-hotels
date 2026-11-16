@@ -1,5 +1,7 @@
-/* Massao Palace — "garden palace" palette: warm ivory, deep emerald, brushed brass. */
-:root {
+/* Massao Palace — "garden palace" palette: warm ivory, deep emerald, brushed brass.
+   Light is the brand default; dark is a deep emerald night variant. */
+:root,
+:root[data-theme="light"] {
   --bg: #f6f1e7;
   --bg-soft: #ece4d4;
   --surface: #e3d8c3;
@@ -9,15 +11,32 @@
   --accent-2: #1f4d3a;
   --on-accent: #fbf8f1;
   --line: rgba(19, 34, 27, 0.14);
-  --hero-overlay: linear-gradient(180deg, rgba(10, 24, 18, 0.5) 0%, rgba(10, 24, 18, 0.1) 40%, rgba(10, 24, 18, 0.88) 100%);
-  --hero-fg: #fbf8f1;
-  --hero-bg: #0e1d16;
   --map-filter: sepia(0.15) saturate(0.9);
   --grain-opacity: 0.035;
   color-scheme: light;
 }
 
-/* Brass on photography reads better slightly lighter. */
+:root[data-theme="dark"] {
+  --bg: #0c1813;
+  --bg-soft: #11211a;
+  --surface: #172b22;
+  --fg: #f2ecdf;
+  --muted: #9aa99f;
+  --accent: #d3ad72;
+  --accent-2: #2e6b52;
+  --on-accent: #0c1813;
+  --line: rgba(242, 236, 223, 0.12);
+  --map-filter: grayscale(0.35) contrast(1.05);
+  --grain-opacity: 0.05;
+  color-scheme: dark;
+}
+
+/* Photography stays dark in both themes. */
+:root {
+  --hero-overlay: linear-gradient(180deg, rgba(10, 24, 18, 0.5) 0%, rgba(10, 24, 18, 0.1) 40%, rgba(10, 24, 18, 0.88) 100%);
+  --hero-fg: #fbf8f1;
+  --hero-bg: #0e1d16;
+}
 .hero-scope {
   --accent: #d6b07a;
   --on-accent: #13221b;

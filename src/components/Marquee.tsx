@@ -1,6 +1,9 @@
-import { site } from "@/config/site";
+"use client";
+
+import { useSite } from "./SiteContext";
 
 export function Marquee() {
+  const { site } = useSite();
   const items = [...site.marquee, ...site.marquee];
   return (
     <div className="relative overflow-hidden border-y border-line bg-bg-soft py-7" aria-hidden>

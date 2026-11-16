@@ -3,10 +3,11 @@
 import { AnimatePresence, motion } from "framer-motion";
 import { useState } from "react";
 import { Plus } from "lucide-react";
-import { site } from "@/config/site";
+import { useSite } from "./SiteContext";
 import { EASE, MaskLines, Reveal } from "./ui/motion";
 
 export function Faq() {
+  const { site } = useSite();
   const faq = site.faq;
   const [open, setOpen] = useState<number | null>(0);
   if (!faq) return null;

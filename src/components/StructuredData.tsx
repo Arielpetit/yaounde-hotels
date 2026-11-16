@@ -1,7 +1,7 @@
-import { site } from "@/config/site";
+import type { HotelConfig } from "@/config/types";
 
 /** schema.org Hotel data so search engines can show address, phone and amenities. */
-export function StructuredData() {
+export function StructuredData({ site }: { site: HotelConfig }) {
   const { seo } = site;
   const data = {
     "@context": "https://schema.org",

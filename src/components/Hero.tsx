@@ -3,14 +3,14 @@
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
-import { ArrowDown } from "lucide-react";
-import { site } from "@/config/site";
+import { ArrowDown, MapPin, Phone } from "lucide-react";
+import { useSite } from "./SiteContext";
 import { EASE, MaskLines, Magnetic } from "./ui/motion";
-import { QuickBooking } from "./QuickBooking";
 import { useScrollTo } from "./SmoothScroll";
 import { useIntroReady } from "./Preloader";
 
 export function Hero() {
+  const { site, ui } = useSite();
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const imgY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
@@ -72,7 +72,7 @@ export function Hero() {
             <Magnetic>
               <button
                 type="button"
-                onClick={() => scrollTo("#reservation")}
+                onClick={() => scrollTo("#contact")}
                 className="inline-flex h-14 items-center rounded-full bg-fg px-8 text-[0.8rem] font-semibold uppercase tracking-[0.16em] text-bg transition-colors hover:bg-accent hover:text-on-accent"
               >
                 {site.hero.cta}
@@ -82,7 +82,7 @@ export function Hero() {
               type="button"
               onClick={() => scrollTo("#hotel")}
               className="group hidden h-14 w-14 items-center justify-center rounded-full border border-fg/30 sm:flex"
-              aria-label="Découvrir l'hôtel"
+              aria-label={ui.discover}
             >
               <ArrowDown className="h-5 w-5 transition-transform duration-500 group-hover:translate-y-1" strokeWidth={1.3} />
             </button>
@@ -96,7 +96,32 @@ export function Hero() {
         animate={ready ? { opacity: 1, y: 0 } : undefined}
         transition={{ duration: 1.1, ease: EASE, delay: 1 }}
       >
-        <QuickBooking />
+        <div className="hidden items-stretch overflow-hidden rounded-2xl border border-fg/15 bg-bg/35 backdrop-blur-xl md:grid md:grid-cols-[1.4fr_1fr_auto]">
+          <div className="flex items-center gap-4 border-r border-fg/10 px-6 py-5">
+            <MapPin className="h-5 w-5 shrink-0 text-accent" strokeWidth={1.4} />
+            <div className="min-w-0">
+              <p className="text-[0.65rem] uppercase tracking-[0.25em] text-fg/60">{ui.address}</p>
+              <p className="truncate text-sm text-fg">{site.location.address.join(" · ")}</p>
+            </div>
+          </div>
+          {site.contact.phones[0] && (
+            <a href={site.contact.phones[0].href} className="group flex items-center gap-4 border-r border-fg/10 px-6 py-5">
+              <Phone className="h-5 w-5 shrink-0 text-accent" strokeWidth={1.4} />
+              <div>
+                <p className="text-[0.65rem] uppercase tracking-[0.25em] text-fg/60">{site.contact.phones[0].label}</p>
+                <p className="text-sm text-fg transition-colors group-hover:text-accent">{site.contact.phones[0].value}</p>
+              </div>
+            </a>
+          )}
+          <button
+            type="button"
+            onClick={() => scrollTo("#hotel")}
+            className="group flex items-center gap-3 px-7 text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-fg transition-colors hover:bg-fg/10"
+          >
+            {ui.discover}
+            <ArrowDown className="h-4 w-4 transition-transform duration-500 group-hover:translate-y-1" strokeWidth={1.5} />
+          </button>
+        </div>
       </motion.div>
     </section>
   );

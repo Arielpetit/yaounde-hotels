@@ -1,4 +1,4 @@
-import type { HotelConfig } from "./types";
+import type { HotelConfig } from "@/config/types";
 
 /**
  * Massao Palace Hôtel — Tsinga, Yaoundé, Cameroun.
@@ -6,7 +6,7 @@ import type { HotelConfig } from "./types";
  * Facebook page and booking listings (Trip.com, Ease Travel, Exploreo). Photos are illustrative
  * placeholders (Unsplash licence): replace the files in /public/images with the hotel's own photography.
  */
-export const site: HotelConfig = {
+export const fr: HotelConfig = {
   name: "Massao Palace Hôtel",
   shortName: "Massao Palace",
   monogram: "MP",
@@ -27,7 +27,7 @@ export const site: HotelConfig = {
     subtitle:
       "Vingt-sept chambres avec balcon, une terrasse ouverte matin et soir et une équipe attentive, à deux pas de l'avenue Jean-Paul II.",
     image: "/images/hero.jpg",
-    cta: "Réserver une chambre",
+    cta: "Nous contacter",
   },
   intro: {
     kicker: "Le Palace",
@@ -198,19 +198,19 @@ export const site: HotelConfig = {
     ],
     note: "Distances indicatives, à vol d'oiseau.",
   },
-  booking: {
-    kicker: "Réservation",
+  contactSection: {
+    kicker: "Contact",
     title: "Votre chambre vous attend.",
     intro:
-      "Choisissez vos dates : votre demande s'ouvre dans WhatsApp, prête à être envoyée à notre réception qui vous confirme disponibilité et tarif.",
-    channel: "whatsapp",
-    whatsapp: "237677812881",
+      "Une question sur nos chambres, la navette ou un séjour d'affaires ? Notre réception, ouverte 24h/24, vous répond par téléphone ou sur WhatsApp, en français comme en anglais.",
+    image: "/images/mini-suite.jpg",
   },
   contact: {
     phones: [
       { label: "Réception", value: "+237 677 81 28 81", href: "tel:+237677812881" },
       { label: "Réservations", value: "+237 699 28 35 29", href: "tel:+237699283529" },
     ],
+    whatsapp: "237677812881",
     email: "sohisti@yahoo.fr",
     hours: "Réception ouverte 24h/24 · Départ jusqu'à 12h",
     socials: [{ label: "Facebook", href: "https://www.facebook.com/massaopalacehotel/" }],

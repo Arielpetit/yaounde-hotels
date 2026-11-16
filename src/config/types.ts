@@ -74,6 +74,7 @@ export interface HotelConfig {
     titleLines: string[];
     subtitle: string;
     image: string;
+    /** Primary button: scrolls to the contact section. */
     cta: string;
   };
   intro: {
@@ -100,16 +101,16 @@ export interface HotelConfig {
     landmarks: { label: string; value: string }[];
     note?: string;
   };
-  booking: {
+  contactSection: {
     kicker: string;
     title: string;
     intro: string;
-    channel: "whatsapp" | "email";
-    whatsapp?: string;
-    email?: string;
+    image: string;
   };
   contact: {
     phones: { label: string; value: string; href: string }[];
+    /** International number without "+", e.g. 237657390112. */
+    whatsapp?: string;
     email?: string;
     hours: string;
     postal?: string;
