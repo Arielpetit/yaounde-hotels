@@ -14,45 +14,76 @@ export const fr: HotelConfig = {
   description:
     "Hôtel haut standing sur la nouvelle route de Nkolbisson à Yaoundé : chambres climatisées jusqu'à la Mini Suite de 120 m², appartements meublés, restaurant-bar, salle de fêtes, service traiteur et accueil à l'aéroport.",
   locale: "fr",
-  nav: [
-    { label: "L'hôtel", href: "#hotel" },
-    { label: "Chambres", href: "#chambres" },
-    { label: "Services", href: "#experiences" },
-    { label: "Équipements", href: "#services" },
-    { label: "Accès", href: "#acces" },
-  ],
+  pages: {
+    hotel: {
+      nav: "L'hôtel",
+      kicker: "L'hôtel",
+      title: "Un cadre reposant et moderne, sur la nouvelle route de Nkolbisson.",
+      intro: "Chambres climatisées, appartements meublés, restaurant et salle de fêtes réunis dans un seul établissement.",
+      image: "/images/intro.jpg",
+    },
+    chambres: {
+      nav: "Chambres",
+      kicker: "Nos hébergements",
+      title: "Nos chambres et suites",
+      intro: "Quatre catégories, de la Chambre Classique à la Mini Suite de 120 m², toutes climatisées, avec salle de bains privative et télévision par câble.",
+      image: "/images/grand-confort.jpg",
+    },
+    services: {
+      nav: "Services",
+      kicker: "Nos services",
+      title: "Restaurant, fêtes, traiteur et appartements",
+      intro: "Une cuisine traditionnelle et exotique, une salle de fêtes élégante, un service traiteur et des appartements meublés pour les longs séjours.",
+      image: "/images/salle-de-fete.jpg",
+    },
+    galerie: {
+      nav: "Galerie",
+      kicker: "Galerie",
+      title: "L'hôtel en images",
+      intro: "Chambres, restaurant, salle de fêtes et appartements : un aperçu de Mo'o Sa'a.",
+      image: "/images/restaurant.jpg",
+    },
+    contact: {
+      nav: "Contact",
+      kicker: "Contact",
+      title: "Contact et accès",
+      intro: "Sur la nouvelle route de Nkolbisson, en face du collège Excellence. Appelez-nous ou écrivez-nous sur WhatsApp.",
+      image: "/images/hero.jpg",
+    },
+  },
   hero: {
     eyebrow: "Nkolbisson · Yaoundé · Haut standing",
     titleLines: ["Le complexe", "parfait pour", "un séjour inoubliable."],
     subtitle:
       "Un cadre reposant et moderne sur la nouvelle route de Nkolbisson : chambres spacieuses, appartements meublés, restaurant et salle de fêtes réunis en un seul lieu.",
     image: "/images/hero.jpg",
-    cta: "Nous contacter",
+    cta: "Voir les chambres",
   },
   intro: {
     kicker: "L'hôtel",
     statement:
-      "Design élégant, service attentionné, ambiance raffinée : Mo'o Sa'a est pensé pour celles et ceux qui cherchent le confort sans compromis.",
+      "Le confort sans compromis, dans une ambiance raffinée.",
     body:
       "Situé sur la nouvelle route de Nkolbisson, en face du collège Excellence et à quelques mètres du carrefour MEEC, l'hôtel Mo'o Sa'a accueille voyageurs d'affaires, familles et longs séjours sur deux niveaux. Chambres climatisées, télévision par câble à écran plat, salle de bains privative et Wi-Fi gratuit dans tout l'établissement : que vous soyez ici pour affaires ou pour le plaisir, notre équipe dévouée met tout en œuvre pour dépasser vos attentes.",
     image: "/images/intro.jpg",
     imageCaption: "Un cadre reposant et moderne",
     stats: [
-      { value: 4, label: "Catégories de chambres" },
-      { value: 120, suffix: " m²", label: "Pour la Mini Suite" },
-      { value: 39, label: "Chambres climatisées" },
-      { value: 2, label: "Niveaux au calme" },
+      { value: "4", label: "Catégories de chambres" },
+      { value: "120 m²", label: "Pour la Mini Suite" },
+      { value: "39", label: "Chambres climatisées" },
+      { value: "2", label: "Niveaux au calme" },
     ],
   },
-  marquee: [
-    "Chambres haut standing",
-    "Appartements meublés",
-    "Restaurant & bar",
-    "Salle de fêtes",
-    "Service traiteur",
-    "Accueil aéroport",
-    "Wi-Fi gratuit",
-  ],
+  story: {
+    kicker: "Notre maison",
+    title: "Voyages d'affaires, familles et longs séjours.",
+    paragraphs: [
+      "Situé sur la nouvelle route de Nkolbisson, en face du collège Excellence et à quelques mètres du carrefour MEEC, l'hôtel Mo'o Sa'a accueille voyageurs d'affaires, familles et clients en long séjour sur deux niveaux.",
+      "Chaque chambre est climatisée, avec télévision par câble à écran plat et salle de bains privative. Une connexion Wi-Fi gratuite couvre tout l'établissement.",
+      "Que vous soyez ici pour affaires ou pour le plaisir, notre équipe met tout en œuvre pour répondre à vos besoins et dépasser vos attentes : restaurant, salle de fêtes, service traiteur, appartements meublés et accueil à l'aéroport.",
+    ],
+    image: "/images/appartement.jpg",
+  },
   roomsSection: {
     kicker: "Nos hébergements",
     title: "De l'espace pour respirer.",
@@ -134,6 +165,7 @@ export const fr: HotelConfig = {
   experiencesSection: {
     kicker: "Nos services",
     title: "Rendez votre séjour mémorable.",
+    intro: "Restaurant, salle de fêtes, traiteur et appartements meublés : tout ce qu'il faut pour séjourner et célébrer.",
   },
   experiences: [
     {
@@ -228,6 +260,11 @@ export const fr: HotelConfig = {
     email: "hotelmoosaapalace@gmail.com",
     hours: "Renseignements par téléphone, WhatsApp ou e-mail",
     socials: [{ label: "Facebook", href: "https://www.facebook.com/hotelmoosaapalace/" }],
+  },
+  cta: {
+    title: "Une chambre, une fête, un séjour prolongé ?",
+    text: "Appelez-nous ou écrivez-nous sur WhatsApp, nous vous répondons rapidement.",
+    image: "/images/salle-de-fete.jpg",
   },
   footer: {
     line: "Un cadre reposant et moderne.",

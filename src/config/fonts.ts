@@ -1,16 +1,16 @@
-import { Fraunces, Outfit } from "next/font/google";
+import { Playfair_Display, Montserrat } from "next/font/google";
 
-export const displayFont = Fraunces({
+/** Playfair echoes the high-contrast serif of the logo's wordmark; Montserrat matches its clean caps. */
+export const displayFont = Playfair_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500"],
-  style: ["normal", "italic"],
+  weight: ["400", "500", "600"],
   variable: "--font-display-family",
   display: "swap",
 });
 
-export const bodyFont = Outfit({
+export const bodyFont = Montserrat({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["400", "500", "600"],
   variable: "--font-body-family",
   display: "swap",
 });

@@ -9,37 +9,46 @@ export const en: HotelConfig = {
   description:
     "An upscale hotel on the new Nkolbisson road in Yaoundé: air-conditioned rooms up to the 120 m² Mini Suite, furnished apartments, restaurant-bar, party hall, catering and airport pick-up.",
   locale: "en",
-  nav: [
-    { label: "The hotel", href: "#hotel" },
-    { label: "Rooms", href: "#chambres" },
-    { label: "Services", href: "#experiences" },
-    { label: "Amenities", href: "#services" },
-    { label: "Location", href: "#acces" },
-  ],
+  pages: {
+    hotel: { ...fr.pages.hotel, nav: "The hotel", kicker: "The hotel", title: "A restful, modern setting on the new Nkolbisson road.", intro: "Air-conditioned rooms, furnished apartments, a restaurant and a party hall, all in one place." },
+    chambres: { ...fr.pages.chambres, nav: "Rooms", kicker: "Accommodation", title: "Our rooms and suites", intro: "Four categories, from the Classic Room to the 120 m² Mini Suite, all air-conditioned, with a private bathroom and cable TV." },
+    services: { ...fr.pages.services, nav: "Services", kicker: "Our services", title: "Restaurant, parties, catering and apartments", intro: "Traditional and exotic cuisine, an elegant party hall, a catering service and furnished apartments for long stays." },
+    galerie: { ...fr.pages.galerie, nav: "Gallery", kicker: "Gallery", title: "The hotel in pictures", intro: "Rooms, restaurant, party hall and apartments: a glimpse of Mo'o Sa'a." },
+    contact: { ...fr.pages.contact, nav: "Contact", kicker: "Contact", title: "Contact and directions", intro: "On the new Nkolbisson road, opposite Collège Excellence. Call us or message us on WhatsApp." },
+  },
   hero: {
     ...fr.hero,
     eyebrow: "Nkolbisson · Yaoundé · Upscale",
     titleLines: ["The perfect", "place for", "an unforgettable stay."],
     subtitle:
       "A restful, modern setting on the new Nkolbisson road: spacious rooms, furnished apartments, a restaurant and a party hall, all in one place.",
-    cta: "Contact us",
+    cta: "View the rooms",
   },
   intro: {
     ...fr.intro,
     kicker: "The hotel",
     statement:
-      "Elegant design, attentive service, a refined atmosphere: Mo'o Sa'a is made for those who want comfort without compromise.",
+      "Comfort without compromise, in a refined atmosphere.",
     body:
       "On the new Nkolbisson road, opposite Collège Excellence and a few metres from the MEEC junction, Hotel Mo'o Sa'a welcomes business travellers, families and long stays across two floors. Air-conditioned rooms, flat-screen cable TV, private bathrooms and free Wi-Fi throughout: whether you are here for business or pleasure, our dedicated team does everything to exceed your expectations.",
     imageCaption: "A restful, modern setting",
     stats: [
-      { value: 4, label: "Room categories" },
-      { value: 120, suffix: " m²", label: "For the Mini Suite" },
-      { value: 39, label: "Air-conditioned rooms" },
-      { value: 2, label: "Quiet floors" },
+      { value: "4", label: "Room categories" },
+      { value: "120 m²", label: "For the Mini Suite" },
+      { value: "39", label: "Air-conditioned rooms" },
+      { value: "2", label: "Quiet floors" },
     ],
   },
-  marquee: ["Upscale rooms", "Furnished apartments", "Restaurant & bar", "Party hall", "Catering", "Airport pick-up", "Free Wi-Fi"],
+  story: {
+    ...fr.story,
+    kicker: "Our house",
+    title: "Business trips, families and long stays.",
+    paragraphs: [
+      "On the new Nkolbisson road, opposite Collège Excellence and a few metres from the MEEC junction, Hotel Mo'o Sa'a welcomes business travellers, families and long-stay guests across two floors.",
+      "Every room is air-conditioned, with a flat-screen cable TV and a private bathroom. Free Wi-Fi covers the whole property.",
+      "Whether you are here for business or pleasure, our team does everything to meet your needs and exceed your expectations: restaurant, party hall, catering, furnished apartments and airport pick-up.",
+    ],
+  },
   roomsSection: {
     kicker: "Accommodation",
     title: "Space to breathe.",
@@ -108,7 +117,11 @@ export const en: HotelConfig = {
       ],
     },
   ],
-  experiencesSection: { kicker: "Our services", title: "Make your stay memorable." },
+  experiencesSection: {
+    kicker: "Our services",
+    title: "Make your stay memorable.",
+    intro: "Restaurant, party hall, catering and furnished apartments: everything you need to stay and celebrate.",
+  },
   experiences: [
     {
       ...fr.experiences[0],
@@ -194,6 +207,7 @@ export const en: HotelConfig = {
     ],
     hours: "Enquiries by phone, WhatsApp or email",
   },
+  cta: { ...fr.cta, title: "A room, a party, an extended stay?", text: "Call us or message us on WhatsApp and we'll get back to you quickly." },
   footer: { line: "A restful, modern setting.", credit: "Illustrative photography." },
   faq: {
     kicker: "Good to know",
