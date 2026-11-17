@@ -13,8 +13,8 @@ export function Facade() {
   return (
     <section className="section">
       <div className="container-x grid items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        <div className="lg:col-span-7">
-          <ImageReveal className="media aspect-[16/10] w-full">
+        <div className={facade.portrait ? "lg:col-span-5" : "lg:col-span-7"}>
+          <ImageReveal className={`media w-full ${facade.portrait ? "mx-auto aspect-[4/5] max-w-[460px]" : "aspect-[16/10]"}`}>
             <Image src={facade.image} alt={facade.caption} fill sizes="(min-width:1024px) 58vw, 100vw" className="object-cover" style={{ objectPosition: facade.focus ?? "50% 50%" }} />
           </ImageReveal>
           <p className="mt-3 flex items-center gap-2 text-xs text-muted">
@@ -22,7 +22,7 @@ export function Facade() {
             {ui.realPhoto} · {facade.caption}
           </p>
         </div>
-        <Reveal className="lg:col-span-5" delay={0.1}>
+        <Reveal className={facade.portrait ? "lg:col-span-6 lg:col-start-7" : "lg:col-span-5"} delay={0.1}>
           <p className="label flex items-center gap-3 text-accent">
             <Ornament />
             {facade.kicker}
