@@ -97,7 +97,7 @@ export function ContactForm() {
       f.phone ? `${ui.formPhone} : ${f.phone}` : "",
       f.email ? `${ui.formEmail} : ${f.email}` : "",
     ].filter((l, i, a) => l !== "" || (a[i - 1] !== "" && i > 0));
-    const text = lines.join("\n");
+    const text = lines.join("\n").trim();
     const url =
       channel === "whatsapp" && whatsapp
         ? whatsappHref(whatsapp, text)

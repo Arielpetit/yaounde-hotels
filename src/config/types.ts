@@ -96,7 +96,7 @@ export interface HotelConfig {
     stats: Stat[];
   };
   /** Real photo of the building, shown on the home and hotel pages. */
-  facade: { image: string; caption: string; kicker: string; title: string; text: string; /** CSS object-position, e.g. "35% 50%". */ focus?: string };
+  facade: { image: string; caption: string; kicker: string; title: string; text: string; /** CSS object-position, e.g. "35% 50%". */ focus?: string; /** Vertical photo: shown in a narrower 4:5 frame. */ portrait?: boolean };
   /** Key practical facts (check-in, breakfast, parking…) shown as a grid. */
   practical: { kicker: string; title: string; items: { icon: IconName; label: string; value: string }[] };
   /** Longer story shown on the hotel page. */
