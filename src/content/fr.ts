@@ -34,7 +34,7 @@ export const fr: HotelConfig = {
       kicker: "Nos services",
       title: "Restaurant, fêtes, traiteur et appartements",
       intro: "Une cuisine traditionnelle et exotique, une salle de fêtes élégante, un service traiteur et des appartements meublés pour les longs séjours.",
-      image: "/images/salle-de-fete.jpg",
+      image: "/images/real-decor.jpg",
     },
     galerie: {
       nav: "Galerie",
@@ -74,6 +74,30 @@ export const fr: HotelConfig = {
       { value: "2", label: "Niveaux au calme" },
     ],
   },
+  facade: {
+    image: "/images/facade.jpg",
+    portrait: true,
+    focus: "50% 40%",
+    caption: "L'hôtel Mo'o Sa'a de nuit, nouvelle route de Nkolbisson",
+    kicker: "L'établissement",
+    title: "Un bâtiment qui s'illumine à la tombée de la nuit.",
+    text: "Plusieurs étages de balcons, un liseré lumineux sur le toit et des palmiers à l'entrée : l'hôtel Mo'o Sa'a se repère facilement sur la nouvelle route de Nkolbisson, en face du collège Excellence, à quelques mètres du carrefour MEEC.",
+  },
+  practical: {
+    kicker: "Infos pratiques",
+    title: "L'essentiel avant votre séjour.",
+    items: [
+      { icon: "bed", label: "Chambres", value: "39 chambres climatisées sur deux niveaux" },
+      { icon: "wifi", label: "Wi-Fi", value: "Gratuit dans tout l'établissement" },
+      { icon: "tv", label: "En chambre", value: "TV câble écran plat, salle de bains privative" },
+      { icon: "plane", label: "Aéroport", value: "Accueil et dépôt sur demande, bagages pris en charge" },
+      { icon: "utensils", label: "Restaurant & bar", value: "Cuisine traditionnelle et exotique" },
+      { icon: "party", label: "Événements", value: "Salle de fêtes et service traiteur" },
+      { icon: "home", label: "Longs séjours", value: "Appartements meublés" },
+      { icon: "users", label: "Capacité", value: "2 adultes + 1 enfant, Mini Suite jusqu'à 5 personnes" },
+      { icon: "concierge", label: "Contact", value: "Téléphone, WhatsApp ou e-mail" },
+    ],
+  },
   story: {
     kicker: "Notre maison",
     title: "Voyages d'affaires, familles et longs séjours.",
@@ -98,7 +122,8 @@ export const fr: HotelConfig = {
       description:
         "Notre plus grand espace : 120 m² pour accueillir jusqu'à trois adultes et deux enfants, avec séjour généreux et chambre au calme. Idéale pour les familles et les longs séjours.",
       image: "/images/mini-suite.jpg",
-      priceNote: "Tarif sur demande",
+      price: "40 000 FCFA",
+      priceNote: "par nuit · indicatif",
       capacity: "3 adultes + 2 enfants",
       size: "120 m²",
       features: [
@@ -117,7 +142,8 @@ export const fr: HotelConfig = {
       description:
         "Soixante-dix mètres carrés de calme et de lumière, pensés pour se reposer comme pour travailler. Accueille deux adultes et un enfant.",
       image: "/images/grand-confort.jpg",
-      priceNote: "Tarif sur demande",
+      price: "25 000 FCFA",
+      priceNote: "par nuit · indicatif",
       capacity: "2 adultes + 1 enfant",
       size: "70 m²",
       features: [
@@ -135,7 +161,8 @@ export const fr: HotelConfig = {
       description:
         "Une chambre spacieuse et bien aménagée, au meilleur rapport confort-prix, pour deux adultes et un enfant.",
       image: "/images/moyen-confort.jpg",
-      priceNote: "Tarif sur demande",
+      price: "20 000 FCFA",
+      priceNote: "par nuit · indicatif",
       capacity: "2 adultes + 1 enfant",
       size: "55 m²",
       features: [
@@ -152,7 +179,8 @@ export const fr: HotelConfig = {
       description:
         "Tout le confort Mo'o Sa'a dans une chambre fonctionnelle et chaleureuse, idéale pour une escale à Yaoundé.",
       image: "/images/classique.jpg",
-      priceNote: "Tarif sur demande",
+      price: "15 000 FCFA",
+      priceNote: "par nuit · indicatif",
       capacity: "2 adultes + 1 enfant",
       features: [
         { icon: "bed", label: "Lit confortable" },
@@ -183,7 +211,7 @@ export const fr: HotelConfig = {
       title: "La Salle de Fêtes",
       description:
         "Ambiance élégante et aménagement spacieux : l'endroit idéal pour vos mariages, anniversaires, réceptions et cérémonies diverses.",
-      image: "/images/salle-de-fete.jpg",
+      image: "/images/real-hall.jpg",
       points: ["Mariages et anniversaires", "Réceptions et cérémonies", "Aménagement spacieux et élégant"],
     },
     {
@@ -221,11 +249,13 @@ export const fr: HotelConfig = {
     { icon: "chef", title: "Service traiteur", text: "Pour vos événements." },
   ],
   gallery: [
+    { src: "/images/facade.jpg", alt: "L'hôtel de nuit", tall: true },
+    { src: "/images/real-hall.jpg", alt: "La salle de fêtes dressée pour une réception" },
+    { src: "/images/real-decor.jpg", alt: "Décoration de mariage dans la salle de fêtes" },
     { src: "/images/hero.jpg", alt: "Chambre au design contemporain", tall: true },
     { src: "/images/restaurant.jpg", alt: "Restaurant" },
     { src: "/images/intro.jpg", alt: "Salon d'appartement" },
     { src: "/images/cuisine.jpg", alt: "Cuisine traditionnelle et exotique", tall: true },
-    { src: "/images/salle-de-fete.jpg", alt: "Salle de fêtes dressée" },
     { src: "/images/bath.jpg", alt: "Salle de bains" },
     { src: "/images/bar.jpg", alt: "Bar et restaurant", tall: true },
     { src: "/images/appartement.jpg", alt: "Cuisine d'appartement meublé" },
@@ -264,7 +294,7 @@ export const fr: HotelConfig = {
   cta: {
     title: "Une chambre, une fête, un séjour prolongé ?",
     text: "Appelez-nous ou écrivez-nous sur WhatsApp, nous vous répondons rapidement.",
-    image: "/images/salle-de-fete.jpg",
+    image: "/images/real-decor.jpg",
   },
   footer: {
     line: "Un cadre reposant et moderne.",
@@ -297,6 +327,10 @@ export const fr: HotelConfig = {
       {
         q: "Le Wi-Fi est-il gratuit ?",
         a: "Oui, une connexion Wi-Fi gratuite est disponible dans tout l'établissement.",
+      },
+      {
+        q: "Quels sont les tarifs ?",
+        a: "À titre indicatif, les nuits démarrent à 15 000 FCFA en Chambre Classique, 20 000 FCFA en Moyen Confort, 25 000 FCFA en Grand Confort et 40 000 FCFA en Mini Suite. Contactez-nous pour le tarif exact à vos dates.",
       },
       {
         q: "Combien de personnes peut accueillir une chambre ?",

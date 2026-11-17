@@ -39,6 +39,28 @@ export const en: HotelConfig = {
       { value: "2", label: "Quiet floors" },
     ],
   },
+  facade: {
+    ...fr.facade,
+    caption: "Hotel Mo'o Sa'a at night, new Nkolbisson road",
+    kicker: "The property",
+    title: "A building that lights up at nightfall.",
+    text: "Several floors of balconies, a glowing trim along the roof and palm trees at the entrance: Hotel Mo'o Sa'a is easy to find on the new Nkolbisson road, opposite Collège Excellence, a few metres from the MEEC junction.",
+  },
+  practical: {
+    kicker: "Good to know",
+    title: "The essentials before your stay.",
+    items: [
+      { icon: "bed", label: "Rooms", value: "39 air-conditioned rooms on two floors" },
+      { icon: "wifi", label: "Wi-Fi", value: "Free throughout the property" },
+      { icon: "tv", label: "In the room", value: "Flat-screen cable TV, private bathroom" },
+      { icon: "plane", label: "Airport", value: "Pick-up and drop-off on request, luggage handled" },
+      { icon: "utensils", label: "Restaurant & bar", value: "Traditional and exotic cuisine" },
+      { icon: "party", label: "Events", value: "Party hall and catering" },
+      { icon: "home", label: "Long stays", value: "Furnished apartments" },
+      { icon: "users", label: "Capacity", value: "2 adults + 1 child, Mini Suite up to 5 guests" },
+      { icon: "concierge", label: "Contact", value: "Phone, WhatsApp or email" },
+    ],
+  },
   story: {
     ...fr.story,
     kicker: "Our house",
@@ -62,7 +84,7 @@ export const en: HotelConfig = {
       tagline: "120 m² for the family",
       description:
         "Our largest space: 120 m² for up to three adults and two children, with a generous living area and a quiet bedroom. Ideal for families and long stays.",
-      priceNote: "Rate on request",
+      priceNote: "per night · indicative",
       capacity: "3 adults + 2 children",
       features: [
         { icon: "sofa", label: "Large living area" },
@@ -78,7 +100,7 @@ export const en: HotelConfig = {
       name: "Grand Comfort Room",
       tagline: "Generous space, 70 m²",
       description: "Seventy square metres of calm and light, designed for resting as well as working. Sleeps two adults and one child.",
-      priceNote: "Rate on request",
+      priceNote: "per night · indicative",
       capacity: "2 adults + 1 child",
       features: [
         { icon: "bed", label: "Large bed" },
@@ -93,7 +115,7 @@ export const en: HotelConfig = {
       name: "Comfort Room",
       tagline: "The right balance, 55 m²",
       description: "A spacious, well-appointed room with the best balance of comfort and price, for two adults and one child.",
-      priceNote: "Rate on request",
+      priceNote: "per night · indicative",
       capacity: "2 adults + 1 child",
       features: [
         { icon: "bed", label: "Double bed" },
@@ -107,7 +129,7 @@ export const en: HotelConfig = {
       name: "Classic Room",
       tagline: "The essentials, with care",
       description: "All the Mo'o Sa'a comfort in a practical, welcoming room, ideal for a stopover in Yaoundé.",
-      priceNote: "Rate on request",
+      priceNote: "per night · indicative",
       capacity: "2 adults + 1 child",
       features: [
         { icon: "bed", label: "Comfortable bed" },
@@ -170,11 +192,13 @@ export const en: HotelConfig = {
     { icon: "chef", title: "Catering", text: "For your events." },
   ],
   gallery: [
+    { src: "/images/facade.jpg", alt: "The hotel at night", tall: true },
+    { src: "/images/real-hall.jpg", alt: "The party hall set for a reception" },
+    { src: "/images/real-decor.jpg", alt: "Wedding decor in the party hall" },
     { src: "/images/hero.jpg", alt: "Contemporary bedroom", tall: true },
     { src: "/images/restaurant.jpg", alt: "Restaurant" },
     { src: "/images/intro.jpg", alt: "Apartment living room" },
     { src: "/images/cuisine.jpg", alt: "Traditional and exotic cuisine", tall: true },
-    { src: "/images/salle-de-fete.jpg", alt: "Party hall set for an event" },
     { src: "/images/bath.jpg", alt: "Bathroom" },
     { src: "/images/bar.jpg", alt: "Bar and restaurant", tall: true },
     { src: "/images/appartement.jpg", alt: "Furnished apartment kitchen" },
@@ -234,6 +258,10 @@ export const en: HotelConfig = {
         a: "Yes. Our party hall hosts weddings, birthdays and ceremonies, and our catering service takes care of your guests' meals.",
       },
       { q: "Is Wi-Fi free?", a: "Yes, free Wi-Fi is available throughout the property." },
+      {
+        q: "What are the rates?",
+        a: "As a guide, nights start at 15,000 FCFA for the Classic Room, 20,000 FCFA for the Comfort Room, 25,000 FCFA for the Grand Comfort Room and 40,000 FCFA for the Mini Suite. Contact us for the exact rate on your dates.",
+      },
       {
         q: "How many people can a room sleep?",
         a: "The Classic, Comfort and Grand Comfort rooms sleep two adults and one child. The 120 m² Mini Suite sleeps up to three adults and two children.",

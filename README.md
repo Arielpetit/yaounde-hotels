@@ -45,6 +45,10 @@ Open http://localhost:3000 (redirects to `/fr`). The English site is at `/en`.
 - Signature: a gently pitched roof outline, after the logo, frames one featured image per page.
 - Light mode by default, warm charcoal dark mode; choice saved per visitor with no flash on load.
 - Quiet motion only: fade-in on scroll, slow photo zoom on headers and hover.
+- Motion: smooth inertial scrolling (Lenis), page transitions, word-by-word headings, curtain image reveals with light parallax,
+  staggered cards, animated figures, header that hides on scroll with a reading-progress line. Respects reduced motion.
+- Contact page with a validated form that opens a ready-to-send WhatsApp or e-mail message (no server needed).
+- Real photo of the building (facade section) and a practical-info grid on the hotel and rooms pages.
 - Fully responsive with a call/WhatsApp bar on phones; keyboard-accessible menus, gallery lightbox and FAQ.
 - schema.org Hotel data, per-page titles and `hreflang` alternates for SEO.
 
@@ -58,8 +62,10 @@ flat-screen cable TV, phone numbers and e-mail.
 
 Please confirm before going live:
 
-- **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography and logo.
-- **Prices**: listings disagree (from 15 000 FCFA on PNBooking, from 30 000 FCFA on Ayila'a), so rooms show "Tarif sur demande".
+- **Photos**: `facade.jpg` (the hotel at night), `real-hall.jpg` and `real-decor.jpg` (the party hall) are the hotel's own photos,
+  published on its Ayila'a listing. The other images are illustrative stock photos (Unsplash licence); replace them with the hotel's photography.
+- **Prices** are shown as indicative, from PNBooking: Classique 15 000, Moyen Confort 20 000, Grand Confort 25 000 and Mini Suite
+  40 000 FCFA per night. Ayila'a lists "from 30 000 FCFA", so confirm the current rates with the hotel.
 - The **WhatsApp** button uses +237 696 87 70 45 (main number on the official site and Facebook). The site also listed +237 222 23 41 47 and +237 343 69 43 23.
 - No verifiable guest reviews were found online, so the testimonials section is disabled.
 

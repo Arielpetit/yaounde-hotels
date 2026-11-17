@@ -1,5 +1,7 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { Story, Amenities } from "@/components/sections/HotelSections";
+import { Facade } from "@/components/sections/Facade";
+import { Practical } from "@/components/sections/Practical";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { pageMetadata, type LocaleParams } from "../meta";
 
@@ -10,6 +12,8 @@ export default function HotelPage() {
     <>
       <PageHero page="hotel" />
       <Story />
+      <Facade />
+      <Practical tone="soft" />
       <Amenities />
       <Testimonials />
     </>

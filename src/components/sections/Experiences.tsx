@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { ArrowRight, Check } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Reveal } from "../ui/Reveal";
+import { ImageReveal, Reveal, RevealGroup, RevealItem, SplitWords } from "../ui/Reveal";
 import { useHref, useSite } from "../SiteContext";
 
 /** Home preview: services as image tiles linking to the services page. */
@@ -27,9 +27,9 @@ export function ExperiencesPreview() {
             </Link>
           }
         />
-        <div className="mt-14 grid gap-5 sm:grid-cols-2">
-          {site.experiences.slice(0, 4).map((e, i) => (
-            <Reveal key={e.id} delay={(i % 2) * 0.08}>
+        <RevealGroup className="mt-14 grid gap-5 sm:grid-cols-2">
+          {site.experiences.slice(0, 4).map((e) => (
+            <RevealItem key={e.id}>
               <Link href={`${href("services")}#${e.id}`} className="media img-zoom group relative block aspect-[16/11] text-white">
                 <Image src={e.image} alt={e.title} fill sizes="(min-width:640px) 50vw, 100vw" className="object-cover" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
@@ -43,9 +43,9 @@ export function ExperiencesPreview() {
                   </span>
                 </div>
               </Link>
-            </Reveal>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );
@@ -55,18 +55,20 @@ export function ExperiencesPreview() {
 export function ExperiencesList() {
   const { site } = useSite();
   return (
-    <section id="main" className="section">
+    <section className="section">
       <div className="container-x space-y-24 lg:space-y-32">
         {site.experiences.map((e, i) => (
           <article key={e.id} id={e.id} className="grid scroll-mt-28 items-center gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className={clsx("lg:col-span-6", i % 2 === 1 && "lg:order-2")}>
-              <div className={clsx("relative aspect-[4/5] w-full", i === 0 ? "signature-frame mx-auto max-w-[460px]" : "media img-zoom")}>
-                <Image src={e.image} alt={e.title} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+              <div className={clsx("relative aspect-[4/5] w-full", i === 0 ? "signature-frame mx-auto max-w-[460px]" : "media")}>
+                <ImageReveal className="absolute inset-0">
+                  <Image src={e.image} alt={e.title} fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover" />
+                </ImageReveal>
               </div>
             </Reveal>
             <Reveal className={clsx("lg:col-span-5", i % 2 === 1 ? "lg:order-1" : "lg:col-start-8")} delay={0.1}>
               <p className="label text-accent">{e.kicker}</p>
-              <h2 className="font-display t-h2 mt-3">{e.title}</h2>
+              <SplitWords text={e.title} className="font-display t-h2 mt-3" />
               <p className="mt-5 text-muted">{e.description}</p>
               <ul className="mt-8 space-y-3 border-t border-line pt-6">
                 {e.points.map((p) => (
