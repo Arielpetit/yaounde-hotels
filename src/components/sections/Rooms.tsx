@@ -5,7 +5,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { ArrowRight, Users, Maximize2 } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Reveal } from "../ui/Reveal";
+import { ImageReveal, Reveal, RevealGroup, RevealItem, SplitWords } from "../ui/Reveal";
 import { Icon } from "../ui/Icon";
 import { useHref, useSite } from "../SiteContext";
 
@@ -29,11 +29,11 @@ export function RoomsPreview() {
             </Link>
           }
         />
-        <div className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
-          {rooms.map((room, i) => (
-            <Reveal key={room.id} delay={i * 0.08}>
+        <RevealGroup className="mt-14 grid gap-10 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+          {rooms.map((room) => (
+            <RevealItem key={room.id}>
               <Link href={`${href("chambres")}#${room.id}`} className="group block">
-                <div className="media img-zoom relative aspect-[4/5]">
+                <div className="media img-zoom relative aspect-[4/5] transition-transform duration-700 ease-out-expo group-hover:-translate-y-1.5">
                   <Image src={room.image} alt={room.name} fill sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw" className="object-cover" />
                 </div>
                 <p className="label mt-6 text-muted">{room.tagline}</p>
@@ -44,9 +44,9 @@ export function RoomsPreview() {
                   <span className="text-fg">{room.price ? `${room.price} · ${room.priceNote ?? ""}` : room.priceNote}</span>
                 </p>
               </Link>
-            </Reveal>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );
@@ -58,18 +58,18 @@ export function RoomsList() {
   const href = useHref();
 
   return (
-    <section id="main" className="section">
+    <section className="section">
       <div className="container-x space-y-24 lg:space-y-32">
         {site.rooms.map((room, i) => (
           <article key={room.id} id={room.id} className="grid scroll-mt-28 items-center gap-10 lg:grid-cols-12 lg:gap-16">
             <Reveal className={clsx("lg:col-span-7", i % 2 === 1 && "lg:order-2")}>
-              <div className="media img-zoom relative aspect-[4/3]">
+              <ImageReveal className="media aspect-[4/3]">
                 <Image src={room.image} alt={room.name} fill sizes="(min-width:1024px) 58vw, 100vw" className="object-cover" />
-              </div>
+              </ImageReveal>
             </Reveal>
             <Reveal className={clsx("lg:col-span-5", i % 2 === 1 && "lg:order-1")} delay={0.1}>
               <p className="label text-accent">{room.tagline}</p>
-              <h2 className="font-display t-h2 mt-3">{room.name}</h2>
+              <SplitWords text={room.name} className="font-display t-h2 mt-3" />
               <p className="mt-5 text-muted">{room.description}</p>
 
               <dl className="mt-8 grid grid-cols-3 gap-4 border-y border-line py-5 text-sm">

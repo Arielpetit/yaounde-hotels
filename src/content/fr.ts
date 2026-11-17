@@ -74,6 +74,26 @@ export const fr: HotelConfig = {
       { value: "3 km", label: "Du Stade Omnisports" },
     ],
   },
+  facade: {
+    image: "/images/facade.jpg",
+    focus: "38% 60%",
+    caption: "L'hôtel vu de la route de Nkolbisson",
+    kicker: "L'établissement",
+    title: "Trois bâtiments face aux collines de Yaoundé.",
+    text: "Façade claire aux balcons de fer forgé, toits rouges et portail aux motifs en losange : La Cave Simson se reconnaît de loin sur la nouvelle route de Nkolbisson. Derrière le portail, un grand parking surveillé et l'entrée de la réception.",
+  },
+  practical: {
+    kicker: "Infos pratiques",
+    title: "L'essentiel avant votre séjour.",
+    items: [
+      { icon: "concierge", label: "Réception", value: "Ouverte 24h/24, 7j/7" },
+      { icon: "car", label: "Parking", value: "Spacieux et surveillé 24h/24" },
+      { icon: "accessible", label: "Accessibilité", value: "Établissement accessible en fauteuil roulant" },
+      { icon: "wifi", label: "Connexion", value: "Wi-Fi dans l'établissement" },
+      { icon: "utensils", label: "Restauration", value: "Restaurant, bar et snack-bar sur place" },
+      { icon: "shield", label: "Sécurité", value: "Portique, vidéosurveillance, sécurité incendie" },
+    ],
+  },
   story: {
     kicker: "Notre maison",
     title: "Trois bâtiments, une seule promesse.",

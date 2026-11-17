@@ -67,6 +67,25 @@ export const en: HotelConfig = {
       { value: "3 km", label: "From the Omnisports Stadium" },
     ],
   },
+  facade: {
+    ...fr.facade,
+    caption: "The hotel seen from the Nkolbisson road",
+    kicker: "The property",
+    title: "Three buildings facing the hills of Yaoundé.",
+    text: "A light facade with wrought-iron balconies, red roofs and a gate with diamond motifs: La Cave Simson is easy to spot on the new Nkolbisson road. Behind the gate are a large guarded car park and the reception entrance.",
+  },
+  practical: {
+    kicker: "Good to know",
+    title: "The essentials before your stay.",
+    items: [
+      { icon: "concierge", label: "Front desk", value: "Open 24/7" },
+      { icon: "car", label: "Parking", value: "Spacious and guarded 24/7" },
+      { icon: "accessible", label: "Accessibility", value: "Wheelchair-accessible property" },
+      { icon: "wifi", label: "Connection", value: "Wi-Fi on the premises" },
+      { icon: "utensils", label: "Dining", value: "Restaurant, bar and snack bar on site" },
+      { icon: "shield", label: "Security", value: "Security gate, CCTV, fire safety" },
+    ],
+  },
   story: {
     ...fr.story,
     kicker: "Our house",

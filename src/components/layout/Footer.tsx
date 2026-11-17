@@ -5,6 +5,7 @@ import { ArrowUp } from "lucide-react";
 import type { PageKey } from "@/config/types";
 import { Logo } from "../ui/Logo";
 import { useHref, useSite, whatsappHref, formatIntl } from "../SiteContext";
+import { scrollToTop } from "../SmoothScroll";
 
 const ORDER: PageKey[] = ["hotel", "chambres", "services", "galerie", "contact"];
 
@@ -97,7 +98,7 @@ export function Footer() {
           </p>
           <button
             type="button"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            onClick={scrollToTop}
             className="inline-flex items-center gap-2 uppercase tracking-[0.16em] hover:text-fg"
           >
             {ui.backToTop} <ArrowUp className="h-3.5 w-3.5" />

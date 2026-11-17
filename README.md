@@ -44,7 +44,10 @@ Open http://localhost:3000 (redirects to `/fr`). The English site is at `/en`.
 - Marcellus (display, echoing the logo's classical capitals) with DM Sans for text; restrained type scale.
 - Signature: the oval of the CsH medallion frames one featured image per page.
 - Light mode by default, deep-moss dark mode; choice saved per visitor with no flash on load.
-- Quiet motion only: fade-in on scroll, slow photo zoom on headers and hover.
+- Motion: smooth inertial scrolling (Lenis), page transitions, word-by-word headings, curtain image reveals with light parallax,
+  staggered cards, animated figures, header that hides on scroll with a reading-progress line. Respects reduced motion.
+- Contact page with a validated form that opens a ready-to-send WhatsApp or e-mail message (no server needed).
+- Real photo of the building (facade section) and a practical-info grid on the hotel and rooms pages.
 - Fully responsive with a call/WhatsApp bar on phones; keyboard-accessible menus, gallery lightbox and FAQ.
 - schema.org Hotel data, per-page titles and `hreflang` alternates for SEO.
 
@@ -57,7 +60,8 @@ The five testimonials on the page are real quotes from those reviews, with first
 
 Please confirm before going live:
 
-- **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography.
+- **Photos**: `public/images/facade.jpg` is the hotel's own photo (from its 2015 website). Its other published photos are too low
+  quality to use, so the remaining images are illustrative stock photos (Unsplash licence). Replace them with new photography.
 - **Room prices** are shown as "Tarif sur demande". Add `price` to each room in `src/config/site.ts` if the hotel wants them public.
 - The e-mail address `contact@lacavesimsonhotel.com` dates from the 2015 website and the domain currently returns an error.
 - The WhatsApp button uses **+237 657 39 01 12** (number listed on Africabz). Confirm the hotel uses WhatsApp on it.

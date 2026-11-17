@@ -1,6 +1,7 @@
 import { HomeHero } from "@/components/sections/HomeHero";
 import { IntroSplit } from "@/components/sections/IntroSplit";
 import { RoomsPreview } from "@/components/sections/Rooms";
+import { Facade } from "@/components/sections/Facade";
 import { ExperiencesPreview } from "@/components/sections/Experiences";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { GalleryPreview } from "@/components/sections/Gallery";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HomeHero />
       <IntroSplit />
       <RoomsPreview />
+      <Facade />
       <ExperiencesPreview />
       <Testimonials />
       <GalleryPreview />
