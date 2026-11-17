@@ -1,5 +1,6 @@
 import { PageHero } from "@/components/sections/PageHero";
 import { RoomsList } from "@/components/sections/Rooms";
+import { Practical } from "@/components/sections/Practical";
 import { pageMetadata, type LocaleParams } from "../meta";
 
 export const generateMetadata = ({ params }: { params: LocaleParams }) => pageMetadata(params, "chambres");
@@ -9,6 +10,7 @@ export default function RoomsPage() {
     <>
       <PageHero page="chambres" />
       <RoomsList />
+      <Practical tone="soft" />
     </>
   );
 }

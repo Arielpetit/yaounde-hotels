@@ -25,7 +25,7 @@ export function ContactDetails() {
   const q = encodeURIComponent(location.mapQuery);
 
   return (
-    <section id="main" className="section">
+    <section className="section">
       <div className="container-x">
         <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
           {contact.whatsapp && (

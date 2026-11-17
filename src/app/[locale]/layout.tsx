@@ -12,6 +12,7 @@ import { Footer } from "@/components/layout/Footer";
 import { CtaBand } from "@/components/layout/CtaBand";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import { StructuredData } from "@/components/StructuredData";
+import { SmoothScroll } from "@/components/SmoothScroll";
 
 export const dynamicParams = false;
 
@@ -50,15 +51,16 @@ export default async function LocaleLayout({ children, params }: { children: Rea
   const site = getSite(locale);
 
   return (
-    <html lang={locale} data-theme={brand.defaultTheme} className={`${displayFont.variable} ${bodyFont.variable} scroll-smooth`} suppressHydrationWarning>
+    <html lang={locale} data-theme={brand.defaultTheme} className={`${displayFont.variable} ${bodyFont.variable} `} suppressHydrationWarning>
       <head>
         <meta name="theme-color" content={brand.themeColor[brand.defaultTheme]} />
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
         <SiteProvider value={{ site, ui: ui[locale], locale }}>
+          <SmoothScroll />
           <Header />
-          <main>{children}</main>
+          <main id="main">{children}</main>
           <CtaBand />
           <Footer />
           <MobileContactBar />

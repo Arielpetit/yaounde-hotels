@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { Reveal } from "./Reveal";
+import { Reveal, SplitWords } from "./Reveal";
 import { Ornament } from "./Ornament";
 
 export function SectionHeading({
@@ -34,7 +34,7 @@ export function SectionHeading({
           <Ornament />
           {kicker}
         </p>
-        <Tag className="font-display t-h2 mt-4 text-balance">{title}</Tag>
+        <SplitWords as={Tag} text={title} className="font-display t-h2 mt-4 text-balance" />
         {intro && <p className={clsx("mt-5 text-muted", center ? "mx-auto max-w-xl" : "max-w-xl")}>{intro}</p>}
       </div>
       {aside && !center && <div className="shrink-0">{aside}</div>}

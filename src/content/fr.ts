@@ -20,20 +20,20 @@ export const fr: HotelConfig = {
       kicker: "Le Palace",
       title: "Un palace à taille humaine, au cœur de Tsinga.",
       intro: "Vingt-sept chambres avec balcon, une terrasse ouverte matin et soir et une équipe qui vous accueille en français comme en anglais.",
-      image: "/images/terrasse.jpg",
+      image: "/images/facade.jpg",
     },
     chambres: {
       nav: "Chambres",
       kicker: "Chambres & suites",
       title: "Nos chambres et suites",
       intro: "Toutes nos chambres ont un balcon, une salle de bain privative, la climatisation et une télévision satellite à écran plat.",
-      image: "/images/double-standard.jpg",
+      image: "/images/real-suite.jpg",
     },
     services: {
       nav: "Services",
       kicker: "Art de vivre",
-      title: "Terrasse, table, bien-être et affaires",
-      intro: "Une terrasse pour le café du matin, une cuisine locale, une salle de massage et un espace pour vos réunions.",
+      title: "Terrasse, table, fêtes, bien-être et affaires",
+      intro: "Une terrasse pour le café du matin, une cuisine africaine et internationale, une salle de fêtes de plus de 350 places, une salle de massage et un espace pour vos réunions.",
       image: "/images/restaurant.jpg",
     },
     galerie: {
@@ -74,6 +74,29 @@ export const fr: HotelConfig = {
       { value: "FR · EN", label: "Langues d'accueil" },
     ],
   },
+  facade: {
+    image: "/images/facade.jpg",
+    focus: "50% 45%",
+    caption: "La façade de Massao Palace, rue Nana Tchakounté",
+    kicker: "L'établissement",
+    title: "Une façade blanche aux fenêtres en arc.",
+    text: "Quatre étages de balcons arrondis, des fenêtres vertes en arc et une marquise d'entrée : Massao Palace se reconnaît au premier regard dans le quartier de Tsinga. Un large escalier mène à la réception, ouverte jour et nuit.",
+  },
+  practical: {
+    kicker: "Infos pratiques",
+    title: "L'essentiel avant votre séjour.",
+    items: [
+      { icon: "concierge", label: "Réception", value: "Ouverte 24h/24, 7j/7" },
+      { icon: "clock", label: "Départ", value: "Chambre à libérer avant 12h" },
+      { icon: "utensils", label: "Petit-déjeuner", value: "Continental et buffet, servi chaque matin" },
+      { icon: "car", label: "Parking", value: "Privé, gratuit et surveillé 24h/24" },
+      { icon: "wifi", label: "Wi-Fi", value: "Gratuit dans les chambres et les espaces communs" },
+      { icon: "plane", label: "Aéroport", value: "Navette vers Yaoundé-Nsimalen" },
+      { icon: "users", label: "Langues", value: "Français et anglais" },
+      { icon: "sparkles", label: "Services", value: "Blanchisserie, pressing, service en chambre" },
+      { icon: "home", label: "Animaux", value: "Non admis" },
+    ],
+  },
   story: {
     kicker: "Notre maison",
     title: "Le calme d'une maison, les services d'un grand hôtel.",
@@ -97,7 +120,7 @@ export const fr: HotelConfig = {
       tagline: "Pour trois",
       description:
         "Vingt mètres carrés pensés pour les familles ou les petits groupes : jusqu'à trois personnes, vue sur la montagne, balcon privatif et tout le confort du Palace.",
-      image: "/images/mini-suite.jpg",
+      image: "/images/real-suite.jpg",
       price: "45 000 FCFA",
       priceNote: "par nuit",
       capacity: "3 personnes",
@@ -117,10 +140,11 @@ export const fr: HotelConfig = {
       tagline: "Deux lits, un balcon",
       description:
         "Deux lits simples de 90 cm, une salle de bain privative et la vue sur les collines : idéale pour les collègues en mission ou les amis en voyage.",
-      image: "/images/double-standard.jpg",
+      image: "/images/real-twin.jpg",
       price: "30 000 FCFA",
       priceNote: "par nuit",
       capacity: "2 personnes",
+      size: "15 m²",
       features: [
         { icon: "bed", label: "2 lits simples de 90 cm" },
         { icon: "mountain", label: "Vue sur la montagne" },
@@ -135,7 +159,7 @@ export const fr: HotelConfig = {
       tagline: "Le séjour à deux",
       description:
         "Un grand lit, un bureau pour travailler, une armoire et un balcon pour les fins de journée : le confort essentiel du Palace.",
-      image: "/images/chambre-double.jpg",
+      image: "/images/real-double.jpg",
       priceNote: "Tarif sur demande",
       capacity: "2 personnes",
       features: [
@@ -146,6 +170,24 @@ export const fr: HotelConfig = {
         { icon: "concierge", label: "Service en chambre" },
       ],
     },
+    {
+      id: "suite",
+      name: "Suite",
+      tagline: "L'espace, 60 m²",
+      description:
+        "Notre plus grand logement : soixante mètres carrés pour séjourner en famille ou recevoir, avec un vrai coin salon, la climatisation et un balcon.",
+      image: "/images/mini-suite.jpg",
+      priceNote: "Tarif sur demande",
+      capacity: "Famille",
+      size: "60 m²",
+      features: [
+        { icon: "sofa", label: "Coin salon" },
+        { icon: "snowflake", label: "Climatisation" },
+        { icon: "tv", label: "TV satellite écran plat" },
+        { icon: "sun", label: "Balcon" },
+        { icon: "wifi", label: "Wi-Fi gratuit" },
+      ],
+    }
   ],
   experiencesSection: {
     kicker: "Art de vivre",
@@ -167,9 +209,18 @@ export const fr: HotelConfig = {
       kicker: "Saveurs",
       title: "Restaurant & Bar",
       description:
-        "Goûtez la cuisine locale au restaurant, puis prolongez la soirée au bar. Le service en chambre prend le relais quand vous préférez rester chez vous.",
+        "Le restaurant sert une cuisine africaine et internationale, du petit-déjeuner buffet au dîner ; le bar prolonge la soirée. Le service en chambre prend le relais quand vous préférez rester chez vous.",
       image: "/images/restaurant.jpg",
-      points: ["Cuisine locale", "Bar et salon", "Service en chambre"],
+      points: ["Cuisine africaine et internationale", "Petit-déjeuner continental et buffet", "Bar, salon et service en chambre"],
+    },
+    {
+      id: "salle-de-fetes",
+      kicker: "Événements",
+      title: "Salle de fêtes",
+      description:
+        "Mariages, anniversaires, dîners de gala : notre salle de fêtes reçoit plus de 350 invités assis. La location est proposée à partir de 700 000 FCFA, couverts compris.",
+      image: "/images/salle-de-fete.jpg",
+      points: ["Plus de 350 places assises", "À partir de 700 000 FCFA, couverts compris", "Restauration et parking sur place"],
     },
     {
       id: "massage",
@@ -204,13 +255,21 @@ export const fr: HotelConfig = {
     { icon: "spa", title: "Massages", text: "Salle de massage sur place." },
     { icon: "flame", title: "Barbecue", text: "Espace grillades en plein air." },
     { icon: "briefcase", title: "Centre d'affaires", text: "Salle de conférence équipée." },
+    { icon: "party", title: "Salle de fêtes", text: "Plus de 350 invités assis." },
+    { icon: "shield", title: "Sécurité 24h/24", text: "Vidéosurveillance et gardiennage." },
+    { icon: "sparkles", title: "Blanchisserie", text: "Lavage et pressing." },
+    { icon: "car", title: "Location de voiture", text: "Sur demande à la réception." }
   ],
   gallery: [
+    { src: "/images/facade.jpg", alt: "La façade de Massao Palace" },
+    { src: "/images/real-suite.jpg", alt: "Mini Suite" },
+    { src: "/images/real-twin.jpg", alt: "Chambre Double Standard" },
+    { src: "/images/real-double.jpg", alt: "Chambre Double" },
     { src: "/images/hero.jpg", alt: "Chambre ouverte sur les collines", tall: true },
     { src: "/images/terrasse.jpg", alt: "Terrasse" },
     { src: "/images/massage.jpg", alt: "Salle de massage" },
     { src: "/images/cuisine.jpg", alt: "Cuisine locale", tall: true },
-    { src: "/images/mini-suite.jpg", alt: "Mini Suite" },
+    { src: "/images/salle-de-fete.jpg", alt: "Salle de fêtes dressée" },
     { src: "/images/bath.jpg", alt: "Salle de bain" },
     { src: "/images/bar.jpg", alt: "Au bar", tall: true },
     { src: "/images/restaurant.jpg", alt: "Restaurant" },
@@ -226,6 +285,7 @@ export const fr: HotelConfig = {
       { label: "Palais polyvalent des sports", value: "1,9 km" },
       { label: "Centre-ville", value: "3 km" },
       { label: "Gare voyageurs de Yaoundé", value: "3,3 km" },
+      { label: "Zoo de Mvog-Betsi", value: "≈ 2,7 km" },
       { label: "Aéroport de Yaoundé-Nsimalen", value: "≈ 19 km" },
     ],
     note: "Distances indicatives, à vol d'oiseau.",
@@ -235,7 +295,7 @@ export const fr: HotelConfig = {
     title: "Votre chambre vous attend.",
     intro:
       "Une question sur nos chambres, la navette ou un séjour d'affaires ? Notre réception, ouverte 24h/24, vous répond par téléphone ou sur WhatsApp, en français comme en anglais.",
-    image: "/images/mini-suite.jpg",
+    image: "/images/real-suite.jpg",
   },
   contact: {
     phones: [
@@ -267,6 +327,14 @@ export const fr: HotelConfig = {
       {
         q: "Quels sont les tarifs ?",
         a: "La Chambre Double Standard est à 30 000 FCFA la nuit et la Mini Suite (jusqu'à 3 personnes, 20 m²) à 45 000 FCFA. Contactez la réception pour les autres catégories et les séjours longs.",
+      },
+      {
+        q: "Le petit-déjeuner est-il servi ?",
+        a: "Oui, un petit-déjeuner continental et buffet est servi chaque matin au restaurant.",
+      },
+      {
+        q: "Peut-on louer la salle de fêtes ?",
+        a: "Oui. La salle accueille plus de 350 invités assis, à partir de 700 000 FCFA couverts compris. Contactez la réception pour vérifier la date et établir un devis.",
       },
       {
         q: "À quelle heure dois-je libérer la chambre ?",

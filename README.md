@@ -45,6 +45,10 @@ Open http://localhost:3000 (redirects to `/fr`). The English site is at `/en`.
 - Signature: round-topped arches, after the facade's windows, frame one featured image per page; the logo draws three arched windows.
 - Light mode by default, deep garden-green dark mode; choice saved per visitor with no flash on load.
 - Quiet motion only: fade-in on scroll, slow photo zoom on headers and hover.
+- Motion: smooth inertial scrolling (Lenis), page transitions, word-by-word headings, curtain image reveals with light parallax,
+  staggered cards, animated figures, header that hides on scroll with a reading-progress line. Respects reduced motion.
+- Contact page with a validated form that opens a ready-to-send WhatsApp or e-mail message (no server needed).
+- Real photo of the building (facade section) and a practical-info grid on the hotel and rooms pages.
 - Fully responsive with a call/WhatsApp bar on phones; keyboard-accessible menus, gallery lightbox and FAQ.
 - schema.org Hotel data, per-page titles and `hreflang` alternates for SEO.
 
@@ -57,7 +61,10 @@ free parking and Wi-Fi, conference room, 24-hour reception, French and English s
 
 Please confirm before going live:
 
-- **Photos** in `public/images` are illustrative stock photos (Unsplash licence). Replace them with the hotel's own photography.
+- **Photos**: `facade.jpg`, `real-suite.jpg`, `real-twin.jpg` and `real-double.jpg` are the hotel's own photos (published on booking
+  listings). The other images are illustrative stock photos (Unsplash licence); replace them with the hotel's photography.
+- **Party hall**: 350+ seated guests, from 700,000 FCFA with place settings (figures quoted from the hotel's website via search results).
+- **Suite 60 m², Standard Double 15 m²**: sizes from the LngBooking listing.
 - **WhatsApp number** (`contact.whatsapp` in `src/content/fr.ts`) is set to +237 677 81 28 81, the number listed on Trip.com. Listings also show +237 699 28 35 29 and +237 692 37 54 80.
 - **E-mail** `sohisti@yahoo.fr` comes from the hotel's Facebook page.
 - The "Chambre Double" category and its price are not confirmed; booking sites list single- and double-bed options.

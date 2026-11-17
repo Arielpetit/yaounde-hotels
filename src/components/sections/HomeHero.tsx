@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
 import { useHref, useSite } from "../SiteContext";
+import { SplitWords } from "../ui/Reveal";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -18,7 +19,7 @@ export function HomeHero() {
   return (
     <section>
       <div className="relative isolate flex h-[clamp(420px,58vh,560px)] items-center overflow-hidden text-white">
-        <motion.div className="absolute inset-0 -z-10" initial={{ scale: 1.05 }} animate={{ scale: 1 }} transition={{ duration: 1.8, ease }}>
+        <motion.div className="absolute inset-0 -z-10" initial={{ scale: 1.12 }} animate={{ scale: 1.02 }} transition={{ duration: 2.4, ease }}>
           <Image src={hero.image} alt="" fill priority sizes="100vw" className="object-cover" />
         </motion.div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
@@ -32,14 +33,7 @@ export function HomeHero() {
           >
             {hero.eyebrow}
           </motion.p>
-          <motion.h1
-            className="font-display t-hero mt-4 max-w-2xl text-balance"
-            initial={{ opacity: 0, y: 18 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.9, ease, delay: 0.2 }}
-          >
-            {hero.titleLines.join(" ")}
-          </motion.h1>
+          <SplitWords as="h1" immediate delay={0.15} text={hero.titleLines.join(" ")} className="font-display t-hero mt-4 max-w-2xl text-balance" />
           <motion.p
             className="mt-5 max-w-lg text-white/85"
             initial={{ opacity: 0, y: 14 }}

@@ -6,7 +6,8 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useCallback, useEffect, useState } from "react";
 import { ArrowRight, ChevronLeft, ChevronRight, X } from "lucide-react";
 import { SectionHeading } from "../ui/SectionHeading";
-import { Reveal } from "../ui/Reveal";
+import { Reveal, RevealGroup, RevealItem } from "../ui/Reveal";
+import { setScrollLocked } from "../SmoothScroll";
 import { useHref, useSite } from "../SiteContext";
 
 /** Home preview: four images and a link to the gallery page. */
@@ -28,15 +29,15 @@ export function GalleryPreview() {
             </Link>
           }
         />
-        <div className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
+        <RevealGroup className="mt-12 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
           {imgs.map((img, i) => (
-            <Reveal key={img.src} delay={i * 0.06} className={i % 2 === 1 ? "md:mt-10" : ""}>
+            <RevealItem key={img.src} className={i % 2 === 1 ? "md:mt-10" : ""}>
               <Link href={href("galerie")} className="media img-zoom relative block aspect-[3/4]">
                 <Image src={img.src} alt={img.alt} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover" />
               </Link>
-            </Reveal>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );
@@ -52,7 +53,7 @@ export function GalleryGrid() {
 
   useEffect(() => {
     if (index === null) return;
-    document.documentElement.style.overflow = "hidden";
+    setScrollLocked(true);
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") close();
       if (e.key === "ArrowRight") step(1);
@@ -60,13 +61,13 @@ export function GalleryGrid() {
     };
     window.addEventListener("keydown", onKey);
     return () => {
-      document.documentElement.style.overflow = "";
+      setScrollLocked(false);
       window.removeEventListener("keydown", onKey);
     };
   }, [index, close, step]);
 
   return (
-    <section id="main" className="section">
+    <section className="section">
       <div className="container-x columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
         {items.map((img, i) => (
           <Reveal key={img.src + i} delay={(i % 3) * 0.06}>

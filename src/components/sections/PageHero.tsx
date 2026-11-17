@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import type { PageKey } from "@/config/types";
 import { useHref, useSite } from "../SiteContext";
+import { SplitWords } from "../ui/Reveal";
 
 /** Short photo band for inner pages: breadcrumb, title and one-line intro. */
 export function PageHero({ page }: { page: PageKey }) {
@@ -34,7 +35,7 @@ export function PageHero({ page }: { page: PageKey }) {
             {p.nav}
           </span>
         </nav>
-        <h1 className="font-display t-page mt-4 max-w-3xl text-balance">{p.title}</h1>
+        <SplitWords as="h1" immediate delay={0.1} text={p.title} className="font-display t-page mt-4 max-w-3xl text-balance" />
         <p className="mt-4 max-w-xl text-white/85">{p.intro}</p>
       </motion.div>
     </section>

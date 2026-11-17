@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion, useScroll, useSpring } from "framer-motion";
+import { setScrollLocked } from "../SmoothScroll";
 import { useEffect, useState } from "react";
 import clsx from "clsx";
 import type { PageKey } from "@/config/types";
@@ -17,10 +18,20 @@ export function Header() {
   const href = useHref();
   const pathname = usePathname() ?? "";
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [open, setOpen] = useState(false);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, { stiffness: 140, damping: 30, mass: 0.3 });
 
   useEffect(() => {
-    const on = () => setScrolled(window.scrollY > 24);
+    let last = window.scrollY;
+    const on = () => {
+      const y = window.scrollY;
+      setScrolled(y > 24);
+      setHidden(y > 320 && y > last + 2);
+      if (y < last - 2) setHidden(false);
+      last = y;
+    };
     on();
     window.addEventListener("scroll", on, { passive: true });
     return () => window.removeEventListener("scroll", on);
@@ -28,7 +39,7 @@ export function Header() {
 
   useEffect(() => setOpen(false), [pathname]);
   useEffect(() => {
-    document.documentElement.style.overflow = open ? "hidden" : "";
+    setScrollLocked(open);
   }, [open]);
 
   const isActive = (p: PageKey) => pathname === `/${locale}/${p}`;
@@ -41,10 +52,12 @@ export function Header() {
       </a>
       <header
         className={clsx(
-          "sticky top-0 z-50 border-b border-line bg-bg/95 text-fg backdrop-blur-md transition-shadow duration-300",
+          "sticky top-0 z-50 border-b border-line bg-bg/90 text-fg backdrop-blur-md transition-[transform,box-shadow] duration-500 ease-out-expo",
           scrolled && "shadow-[0_6px_24px_-16px_rgba(0,0,0,0.35)]",
+          hidden && !open && "-translate-y-full",
         )}
       >
+        <motion.div aria-hidden className="absolute inset-x-0 bottom-[-1px] h-[2px] origin-left bg-accent" style={{ scaleX: progress }} />
         <div className="container-x flex h-[72px] items-center justify-between gap-6">
           <Link href={href()} aria-label={`${site.name} — ${ui.home}`} className="shrink-0">
             <Logo />
