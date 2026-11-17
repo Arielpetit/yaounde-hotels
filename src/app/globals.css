@@ -20,7 +20,7 @@
 
 html {
   -webkit-text-size-adjust: 100%;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 96px;
 }
 html.lenis,
 html.lenis body {
@@ -57,12 +57,12 @@ body {
     letter-spacing: var(--display-tracking, -0.01em);
   }
   .t-hero {
-    font-size: clamp(2.5rem, 4.6vw, 4.25rem);
-    line-height: 1.06;
+    font-size: clamp(2.125rem, 3.8vw, 3.5rem);
+    line-height: 1.1;
   }
   .t-page {
-    font-size: clamp(2.25rem, 4vw, 3.5rem);
-    line-height: 1.08;
+    font-size: clamp(1.875rem, 3.2vw, 2.875rem);
+    line-height: 1.12;
   }
   .t-h2 {
     font-size: clamp(1.875rem, 3vw, 2.625rem);

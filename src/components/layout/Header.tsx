@@ -31,8 +31,6 @@ export function Header() {
     document.documentElement.style.overflow = open ? "hidden" : "";
   }, [open]);
 
-  // Every page opens on a photo, so the bar is transparent with light text until scrolled.
-  const solid = scrolled || open;
   const isActive = (p: PageKey) => pathname === `/${locale}/${p}`;
   const navPages = ORDER.filter((p) => p !== "contact");
 
@@ -43,11 +41,11 @@ export function Header() {
       </a>
       <header
         className={clsx(
-          "fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,color] duration-500",
-          solid ? "bg-bg/95 text-fg shadow-[0_1px_0_var(--line)] backdrop-blur-md" : "bg-transparent text-white",
+          "sticky top-0 z-50 border-b border-line bg-bg/95 text-fg backdrop-blur-md transition-shadow duration-300",
+          scrolled && "shadow-[0_6px_24px_-16px_rgba(0,0,0,0.35)]",
         )}
       >
-        <div className="container-x flex h-[76px] items-center justify-between gap-6">
+        <div className="container-x flex h-[72px] items-center justify-between gap-6">
           <Link href={href()} aria-label={`${site.name} — ${ui.home}`} className="shrink-0">
             <Logo />
           </Link>
@@ -77,7 +75,7 @@ export function Header() {
             <ThemeToggle />
             <Link
               href={href("contact")}
-              className={clsx("btn hidden h-10 px-5 text-[0.75rem] md:inline-flex", solid ? "btn-primary" : "btn-ghost-light")}
+              className="btn btn-primary hidden h-10 px-5 text-[0.75rem] md:inline-flex"
             >
               {ui.contactCta}
             </Link>
@@ -102,7 +100,7 @@ export function Header() {
         {open && (
           <motion.div
             id="mobile-nav"
-            className="fixed inset-0 z-40 flex flex-col bg-bg pt-[76px] lg:hidden"
+            className="fixed inset-0 z-40 flex flex-col bg-bg pt-[72px] lg:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
