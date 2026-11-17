@@ -58,7 +58,7 @@ export function ContactDetails() {
           {contact.email && (
             <Reveal delay={0.1}>
               <Card icon={<Mail className="h-5 w-5" strokeWidth={1.5} />} title={ui.email}>
-                <a href={`mailto:${contact.email}`} className="block text-[0.95rem] leading-snug [overflow-wrap:anywhere] hover:text-accent">
+                <a href={`mailto:${contact.email}`} className="block text-sm leading-snug [overflow-wrap:anywhere] hover:text-accent">
                   {contact.email}
                 </a>
               </Card>
