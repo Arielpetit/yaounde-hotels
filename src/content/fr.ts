@@ -12,7 +12,7 @@ export const fr: HotelConfig = {
   monogram: "MP",
   tagline: "L'élégance au cœur de Tsinga",
   description:
-    "Hôtel de 27 chambres à Tsinga, Yaoundé : chambres avec balcon et vue sur les collines, restaurant, bar, terrasse, salle de massage, navette aéroport et parking privé gratuit.",
+    "Hôtel de 27 chambres à Tsinga, Yaoundé : balcon, climatisation, restaurant, bar, terrasse, salle de fêtes de 350+ places, navette aéroport et parking gratuit.",
   locale: "fr",
   pages: {
     hotel: {

@@ -73,4 +73,12 @@ Please confirm before going live:
 
 ## Deploy
 
-Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` to the public URL for correct social previews.
+Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` (for example `https://www.your-hotel.com`) to the public URL before building:
+share links use it to build the absolute address of the preview image. On Vercel it falls back to the project's production domain.
+
+### Share previews (WhatsApp, Facebook, X, LinkedIn)
+
+Each language has a 1200×630 image in `public/` (`og-fr.jpg`, `og-en.jpg`: the hotel's building photo, logo mark, name, tagline and phone).
+Titles and descriptions come from `src/content/fr.ts` and `src/content/en.ts` (`name`, `tagline`, `description`, and each page's `intro`).
+Keep `description` under about 160 characters so previews are not cut off. Test a link with the
+[Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) after deploying; WhatsApp caches previews, so use a new URL query to refresh.

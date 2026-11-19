@@ -7,7 +7,7 @@ export const en: HotelConfig = {
   name: "Massao Palace Hotel",
   tagline: "Elegance in the heart of Tsinga",
   description:
-    "A 27-room hotel in Tsinga, Yaoundé: rooms with balconies and hill views, restaurant, bar, terrace, massage room, airport shuttle and free private parking.",
+    "A 27-room hotel in Tsinga, Yaoundé: balconies, air conditioning, restaurant, bar, terrace, a 350+ guest party hall, airport shuttle and free parking.",
   locale: "en",
   pages: {
     hotel: { ...fr.pages.hotel, nav: "The hotel", kicker: "The Palace", title: "A palace on a human scale, in the heart of Tsinga.", intro: "Twenty-seven rooms with balconies, a terrace open morning and evening, and a team that welcomes you in French and English." },
