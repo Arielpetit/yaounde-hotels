@@ -12,7 +12,7 @@ export const fr: HotelConfig = {
   monogram: "CS",
   tagline: "Toujours disponible à votre service",
   description:
-    "Hôtel chic et calme sur la route de Nkolbisson, à Yaoundé : chambres climatisées haut standing, suites, bar-restaurant de cuisine locale, salle de fêtes de plus de 300 places, salle de conférence modulable, parking sécurisé 24h/24 et accès en fauteuil roulant.",
+    "Hôtel chic et calme à Nkolbisson, Yaoundé : chambres climatisées et suites, restaurant-bar, salle de fêtes de plus de 300 places, parking sécurisé 24h/24.",
   locale: "fr",
   pages: {
     hotel: {

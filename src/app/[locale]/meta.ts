@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import type { PageKey } from "@/config/types";
 import { getSite } from "@/content";
 import { isLocale } from "@/i18n/config";
+import { socialMeta } from "@/lib/seo";
 
 export type LocaleParams = Promise<{ locale: string }>;
 
@@ -15,6 +16,12 @@ export async function pageMetadata(params: LocaleParams, page?: PageKey): Promis
   return {
     ...(head ? { title: head.nav, description: head.intro } : {}),
     alternates: { canonical: `/${locale}${path}`, languages: { fr: `/fr${path}`, en: `/en${path}` } },
-    ...(head ? { openGraph: { title: `${head.title}`, description: head.intro, images: [head.image] } } : {}),
+    ...socialMeta({
+      locale,
+      site,
+      title: head ? `${head.nav} · ${site.name}` : `${site.name} — ${site.tagline}`,
+      description: head ? head.intro : site.description,
+      path,
+    }),
   };
 }

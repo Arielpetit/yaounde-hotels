@@ -6,7 +6,7 @@ export const en: HotelConfig = {
   ...fr,
   tagline: "Always at your service",
   description:
-    "A chic, quiet hotel on the Nkolbisson road in Yaoundé: air-conditioned premium rooms, suites, a bar-restaurant serving local cuisine, a party hall for 300+ guests, a modular conference room, 24/7 secure parking and wheelchair access.",
+    "A chic, quiet hotel in Nkolbisson, Yaoundé: air-conditioned rooms and suites, restaurant-bar, a party hall for 300+ guests and 24/7 secure parking.",
   locale: "en",
   pages: {
     hotel: {
