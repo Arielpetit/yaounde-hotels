@@ -13,8 +13,16 @@ import { CtaBand } from "@/components/layout/CtaBand";
 import { MobileContactBar } from "@/components/layout/MobileContactBar";
 import { StructuredData } from "@/components/StructuredData";
 import { SmoothScroll } from "@/components/SmoothScroll";
+import { socialMeta } from "@/lib/seo";
 
 export const dynamicParams = false;
+
+/** Public origin used for absolute share-image URLs: set NEXT_PUBLIC_SITE_URL, or deploy on Vercel. */
+function siteUrl() {
+  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL;
+  if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  return "http://localhost:3000";
+}
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
@@ -27,16 +35,10 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   if (!isLocale(locale)) return {};
   const site = getSite(locale);
   return {
-    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+    metadataBase: new URL(siteUrl()),
     title: { default: `${site.name} — ${site.tagline}`, template: `%s · ${site.name}` },
     description: site.description,
-    openGraph: {
-      siteName: site.name,
-      description: site.description,
-      images: [site.hero.image],
-      locale: locale === "fr" ? "fr_CM" : "en_GB",
-      type: "website",
-    },
+    ...socialMeta({ locale, site, title: `${site.name} — ${site.tagline}`, description: site.description, path: "" }),
   };
 }
 

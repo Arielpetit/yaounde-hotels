@@ -12,7 +12,7 @@ export const fr: HotelConfig = {
   monogram: "MS",
   tagline: "Vivez une expérience unique",
   description:
-    "Hôtel haut standing sur la nouvelle route de Nkolbisson à Yaoundé : chambres climatisées jusqu'à la Mini Suite de 120 m², appartements meublés, restaurant-bar, salle de fêtes, service traiteur et accueil à l'aéroport.",
+    "Hôtel haut standing à Nkolbisson, Yaoundé : chambres climatisées jusqu'à la Mini Suite de 120 m², appartements meublés, restaurant, salle de fêtes et traiteur.",
   locale: "fr",
   pages: {
     hotel: {

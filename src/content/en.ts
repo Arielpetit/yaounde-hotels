@@ -7,7 +7,7 @@ export const en: HotelConfig = {
   name: "Hotel Mo'o Sa'a",
   tagline: "Live a unique experience",
   description:
-    "An upscale hotel on the new Nkolbisson road in Yaoundé: air-conditioned rooms up to the 120 m² Mini Suite, furnished apartments, restaurant-bar, party hall, catering and airport pick-up.",
+    "Upscale hotel in Nkolbisson, Yaoundé: air-conditioned rooms up to the 120 m² Mini Suite, furnished apartments, restaurant, party hall and catering.",
   locale: "en",
   pages: {
     hotel: { ...fr.pages.hotel, nav: "The hotel", kicker: "The hotel", title: "A restful, modern setting on the new Nkolbisson road.", intro: "Air-conditioned rooms, furnished apartments, a restaurant and a party hall, all in one place." },
