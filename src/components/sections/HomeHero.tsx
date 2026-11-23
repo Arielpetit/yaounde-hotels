@@ -18,13 +18,13 @@ export function HomeHero() {
 
   return (
     <section>
-      <div className="relative isolate flex h-[clamp(420px,58vh,560px)] items-center overflow-hidden text-white">
+      <div className="relative isolate flex min-h-[clamp(420px,58vh,560px)] items-center overflow-hidden text-white">
         <motion.div className="absolute inset-0 -z-10" initial={{ scale: 1.12 }} animate={{ scale: 1.02 }} transition={{ duration: 2.4, ease }}>
           <Image src={hero.image} alt="" fill priority sizes="100vw" className="object-cover" />
         </motion.div>
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black/70 via-black/40 to-black/10" />
 
-        <div className="container-x pb-14">
+        <div className="container-x pb-20 pt-12 md:pb-14 md:pt-0">
           <motion.p
             className="label text-white/85"
             initial={{ opacity: 0, y: 12 }}
