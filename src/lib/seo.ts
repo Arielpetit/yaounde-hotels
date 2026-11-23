@@ -2,10 +2,15 @@ import type { Metadata } from "next";
 import type { HotelConfig } from "@/config/types";
 import type { Locale } from "@/i18n/config";
 
-/** Public origin used for absolute URLs (share image, sitemap): set NEXT_PUBLIC_SITE_URL, or deploy on Vercel. */
+/**
+ * Public origin used for absolute URLs (share image, sitemap, structured data).
+ * Order: NEXT_PUBLIC_SITE_URL (custom domain) > Vercel production domain > Netlify site URL > localhost.
+ */
 export function siteUrl() {
-  if (process.env.NEXT_PUBLIC_SITE_URL) return process.env.NEXT_PUBLIC_SITE_URL.replace(/\/$/, "");
+  const clean = (u: string) => u.replace(/\/$/, "");
+  if (process.env.NEXT_PUBLIC_SITE_URL) return clean(process.env.NEXT_PUBLIC_SITE_URL);
   if (process.env.VERCEL_PROJECT_PRODUCTION_URL) return `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`;
+  if (process.env.NETLIFY && process.env.URL) return clean(process.env.URL);
   return "http://localhost:3000";
 }
 
