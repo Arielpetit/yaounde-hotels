@@ -1,4 +1,5 @@
 import type { HotelConfig } from "@/config/types";
+import { siteUrl } from "@/lib/seo";
 
 /** schema.org Hotel data so search engines can show address, phone and amenities. */
 export function StructuredData({ site }: { site: HotelConfig }) {
@@ -9,7 +10,10 @@ export function StructuredData({ site }: { site: HotelConfig }) {
     name: site.name,
     description: site.description,
     slogan: site.tagline,
-    image: site.hero.image,
+    url: `${siteUrl()}/${site.locale}`,
+    inLanguage: site.locale,
+    logo: `${siteUrl()}/icon-512.png`,
+    image: [`${siteUrl()}/og-${site.locale}.jpg`],
     telephone: seo.telephone,
     email: site.contact.email,
     priceRange: seo.priceRange,
