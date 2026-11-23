@@ -73,6 +73,14 @@ Please confirm before going live:
 Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` (for example `https://www.your-hotel.com`) to the public URL before building:
 share links use it to build the absolute address of the preview image. On Vercel it falls back to the project's production domain.
 
+### Logo, favicon and app icons
+
+The hotel's official logo is used as an emblem in the header and footer (`public/logo-mark.png`, plus `logo-mark-dark.png` when the
+emblem has black parts), sized in `src/config/brand.ts`. Icons are generated from the same emblem:
+`src/app/favicon.ico`, `icon.png`, `apple-icon.png`, and `public/icon-192.png`, `icon-512.png`, `icon-maskable-512.png`
+(installable web app, see `src/app/manifest.ts`). `robots.txt` and `sitemap.xml` (both languages with `hreflang`) are generated at build time.
+The emblems were cut from low-resolution logo images; replace the files above with vector or high-resolution exports when available.
+
 ### Share previews (WhatsApp, Facebook, X, LinkedIn)
 
 Each language has a 1200×630 image in `public/` (`og-fr.jpg`, `og-en.jpg`: the hotel's building photo, logo mark, name, tagline and phone).

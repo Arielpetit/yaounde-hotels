@@ -1,14 +1,14 @@
-/* La Cave Simson — palette taken from the hotel's "CsH" logo (sage green and silver on white),
+/* La Cave Simson — palette taken from the hotel's official CSH logo (a deep green disc),
    its banquet hall (green and ivory) and the terracotta trim of its facade.
    Light is the default; dark is a deep moss night. */
 :root,
 :root[data-theme="light"] {
   --bg: #f6f6f2;
-  --bg-soft: #ecefe9;
+  --bg-soft: #eaf0e8;
   --surface: #ffffff;
   --fg: #1d2421;
   --muted: #5d6863;
-  --accent: #4b6a5c;
+  --accent: #2c6a36;
   --accent-2: #b0562f;
   --on-accent: #ffffff;
   --line: rgba(29, 36, 33, 0.12);
@@ -19,11 +19,11 @@
 
 :root[data-theme="dark"] {
   --bg: #131816;
-  --bg-soft: #1a201d;
+  --bg-soft: #1a211c;
   --surface: #202724;
   --fg: #eef1ed;
   --muted: #9fa9a4;
-  --accent: #9dbbaa;
+  --accent: #86c48f;
   --accent-2: #d98a63;
   --on-accent: #131816;
   --line: rgba(238, 241, 237, 0.1);

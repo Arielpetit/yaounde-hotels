@@ -1,23 +1,41 @@
 "use client";
 
+import Image from "next/image";
 import clsx from "clsx";
+import { brand } from "@/config/brand";
 import { useSite } from "../SiteContext";
 
-/** Oval "CsH" medallion, redrawn from the hotel's original logo, with the wordmark. */
-export function Logo({ className, compact = false }: { className?: string; compact?: boolean }) {
+/** Official emblem (from the hotel's real logo) with the hotel name set in the site's display font. */
+export function Logo({ className, compact = false, height = 40 }: { className?: string; compact?: boolean; height?: number }) {
   const { site, ui } = useSite();
+  const { mark, markDark } = brand.logo;
+  const w = Math.round((mark.width / mark.height) * height);
+  const wd = markDark ? Math.round((markDark.width / markDark.height) * height) : w;
   return (
     <span className={clsx("inline-flex items-center gap-3", className)}>
-      <svg viewBox="0 0 64 40" className="h-9 w-auto shrink-0" aria-hidden>
-        <ellipse cx="32" cy="20" rx="30.5" ry="18.5" fill="none" stroke="currentColor" strokeWidth="1.2" />
-        <ellipse cx="32" cy="20" rx="27" ry="15.2" fill="none" stroke="var(--accent)" strokeWidth="0.7" />
-        <text x="32" y="26.5" textAnchor="middle" fontFamily="var(--font-display-family), Georgia, serif" fontSize="17" fill="currentColor">
-          C<tspan fontSize="12">s</tspan>H
-        </text>
-      </svg>
+      <Image
+        src={mark.src}
+        alt=""
+        width={w}
+        height={height}
+        priority
+        className={clsx("shrink-0 object-contain", markDark && "dark:hidden")}
+        style={{ height, width: w }}
+      />
+      {markDark && (
+        <Image
+          src={markDark.src}
+          alt=""
+          width={wd}
+          height={height}
+          priority
+          className="hidden shrink-0 object-contain dark:block"
+          style={{ height, width: wd }}
+        />
+      )}
       {!compact && (
         <span className="flex flex-col whitespace-nowrap leading-none">
-          <span className="font-display text-[1.2rem]">{site.shortName}</span>
+          <span className="font-display text-[1.25rem]">{site.shortName}</span>
           <span className="mt-1.5 text-[0.6rem] font-medium uppercase tracking-[0.3em] opacity-70">{ui.logoSub}</span>
         </span>
       )}
