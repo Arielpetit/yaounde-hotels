@@ -71,7 +71,7 @@ Please confirm before going live:
 ## Deploy
 
 Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` (for example `https://www.your-hotel.com`) to the public URL before building:
-share links use it to build the absolute address of the preview image. On Vercel it falls back to the project's production domain.
+share links use it to build the absolute address of the preview image. On Vercel it falls back to the project's production domain, and on Netlify to the site URL.
 
 ### Logo, favicon and app icons
 
