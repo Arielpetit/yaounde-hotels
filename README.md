@@ -40,10 +40,10 @@ Open http://localhost:3000 (redirects to `/fr`). The English site is at `/en`.
 
 ## Design
 
-- Palette taken from the building itself: white facade, green arched windows and the deep red carpet of the corridors.
+- Palette taken from the hotel's official logo (orange hands, black lettering, two orange stars) and its white facade.
 - Cormorant Garamond (display) with Jost for text; restrained type scale.
 - Signature: round-topped arches, after the facade's windows, frame one featured image per page; the logo draws three arched windows.
-- Light mode by default, deep garden-green dark mode; choice saved per visitor with no flash on load.
+- Light mode by default, warm charcoal dark mode; choice saved per visitor with no flash on load.
 - Quiet motion only: fade-in on scroll, slow photo zoom on headers and hover.
 - Motion: smooth inertial scrolling (Lenis), page transitions, word-by-word headings, curtain image reveals with light parallax,
   staggered cards, animated figures, header that hides on scroll with a reading-progress line. Respects reduced motion.
@@ -75,6 +75,14 @@ Please confirm before going live:
 
 Works on Vercel or any Node host (`npm run build && npm start`). Set `NEXT_PUBLIC_SITE_URL` (for example `https://www.your-hotel.com`) to the public URL before building:
 share links use it to build the absolute address of the preview image. On Vercel it falls back to the project's production domain.
+
+### Logo, favicon and app icons
+
+The hotel's official logo is used as an emblem in the header and footer (`public/logo-mark.png`, plus `logo-mark-dark.png` when the
+emblem has black parts), sized in `src/config/brand.ts`. Icons are generated from the same emblem:
+`src/app/favicon.ico`, `icon.png`, `apple-icon.png`, and `public/icon-192.png`, `icon-512.png`, `icon-maskable-512.png`
+(installable web app, see `src/app/manifest.ts`). `robots.txt` and `sitemap.xml` (both languages with `hreflang`) are generated at build time.
+The emblems were cut from low-resolution logo images; replace the files above with vector or high-resolution exports when available.
 
 ### Share previews (WhatsApp, Facebook, X, LinkedIn)
 
